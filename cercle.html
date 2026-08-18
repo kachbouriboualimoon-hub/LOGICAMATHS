@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الدائرة | Logicamaths</title>
+<style>
+:root{--b:#2563eb;--v:#7c3aed;--g:#16a34a;--ink:#172033;--mut:#667085;--bg:#f5f7fb;--line:#e5e9f2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}.w{width:min(1000px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fffffff2;border-bottom:1px solid var(--line)}
+nav{height:62px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:950;font-size:1.2rem;direction:ltr}.brand b{color:var(--b)}.back{font-weight:800;color:var(--b)}
+.hero{background:linear-gradient(135deg,#eaf2ff,#f8efff);padding:34px 0}.heroGrid{display:grid;grid-template-columns:1fr 260px;gap:25px;align-items:center}.eyebrow{display:inline-block;background:#e0ebff;color:#2455c7;padding:5px 10px;border-radius:99px;font-weight:800;font-size:.82rem}
+h1{font-size:clamp(2rem,6vw,3.7rem);line-height:1.1;margin:10px 0}.hero p{color:var(--mut);margin:0}.visual{height:230px;background:#111827;border-radius:24px;display:grid;place-items:center;position:relative;overflow:hidden}.circle{width:150px;height:150px;border:4px solid #fff;border-radius:50%;position:relative}.circle:before{content:"O";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;font-weight:900}.circle:after{content:"";position:absolute;width:75px;height:3px;background:#a78bfa;left:50%;top:50%;transform-origin:left}.symbol{position:absolute;color:#fff;font-size:1.4rem;font-weight:900}.s1{top:18px;left:22px}.s2{top:22px;right:22px}.s3{bottom:20px;left:25px}.s4{bottom:20px;right:25px}
+main{padding:34px 0 60px}.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:22px}.tab{border:1px solid var(--line);background:#fff;border-radius:13px;padding:11px 7px;font-weight:850;cursor:pointer;color:var(--ink)}.tab.active{background:var(--b);border-color:var(--b);color:#fff}
+.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 25px #1720330b}.card h2,.card h3{margin-top:0}.muted{color:var(--mut)}
+.diagram{height:280px;background:#f8fafc;border-radius:16px;display:grid;place-items:center}.big{width:180px;height:180px;border:5px solid var(--b);border-radius:50%;position:relative}.big .o{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:950}.big .r{position:absolute;width:90px;height:4px;background:var(--v);left:50%;top:50%;transform-origin:left}.big .p{position:absolute;left:calc(50% + 85px);top:calc(50% - 10px);font-weight:900;color:var(--v)}
+.step{display:flex;gap:12px;align-items:flex-start;margin:12px 0}.num{min-width:34px;height:34px;border-radius:50%;background:var(--b);color:#fff;display:grid;place-items:center;font-weight:900}
+.question{font-size:1.08rem;font-weight:850;margin-bottom:12px}.choices{display:grid;gap:9px}.choice{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;text-align:right;font-weight:750;cursor:pointer}.choice.correct{background:#dcfce7;border-color:#86efac}.choice.wrong{background:#fee2e2;border-color:#fca5a5}.feedback{min-height:28px;margin-top:9px;font-weight:850}
+.scoreBox{background:#111827;color:#fff;border-radius:20px;padding:24px;text-align:center}.score{font-size:2.6rem;font-weight:950}.badge{font-size:2.4rem}.progress{height:10px;background:#e7eaf0;border-radius:99px;overflow:hidden;margin:12px 0}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--b),var(--v));transition:.3s}
+footer{background:#0d1320;color:#b9c2d2;text-align:center;padding:28px}.footerBrand{color:#fff;font-weight:950;direction:ltr}
+@media(max-width:760px){.heroGrid{grid-template-columns:1fr}.visual{order:-1}.tabs{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}}
+@media(max-width:430px){.w{width:91%}.tabs{grid-template-columns:repeat(2,1fr)}.visual{height:205px}.circle{width:135px;height:135px}.big{width:155px;height:155px}}
+</style>
+</head>
+<body>
+<header><div class="w"><nav><a class="brand" href="index.html">LOGICA<b>MATHS</b></a><a class="back" href="index.html">← الرئيسية</a></nav></div></header>
+
+<section class="hero"><div class="w heroGrid">
+<div><span class="eyebrow">🟢 السنة الرابعة ابتدائي</span><h1>📐 الدائرة</h1><p>نتعلّم الدائرة، مركزها، شعاعها، قطرها، وكيفية رسمها.</p></div>
+<div class="visual"><span class="symbol s1">π</span><span class="symbol s2">r</span><span class="symbol s3">O</span><span class="symbol s4">d</span><div class="circle"></div></div>
+</div></section>
+
+<main><div class="w">
+<div class="tabs">
+<button class="tab active" onclick="show(0)">📖 أتعلم</button>
+<button class="tab" onclick="show(1)">💡 أفهم</button>
+<button class="tab" onclick="show(2)">🧩 أطبّق</button>
+<button class="tab" onclick="show(3)">🎮 ألعب</button>
+<button class="tab" onclick="show(4)">✅ أختبر نفسي</button>
+<button class="tab" onclick="show(5)">🏆 إنجازي</button>
+</div>
+
+<section class="panel active">
+<div class="grid">
+<div class="card"><h2>🔵 ما هي الدائرة؟</h2><p>الدائرة هي مجموعة النقاط التي تبعد نفس المسافة عن نقطة ثابتة تسمى <b>المركز</b>.</p><p>هذه المسافة تسمى <b>الشعاع</b>.</p></div>
+<div class="card diagram"><div class="big"><span class="o">O</span><span class="r"></span><span class="p">أ</span></div></div>
+</div>
+<div class="card" style="margin-top:16px"><h3>📌 مفردات الدرس</h3><div class="step"><span class="num">1</span><div><b>المركز</b> — النقطة الثابتة في وسط الدائرة.</div></div><div class="step"><span class="num">2</span><div><b>الشعاع</b> — قطعة تصل المركز بنقطة من الدائرة.</div></div><div class="step"><span class="num">3</span><div><b>القطر</b> — قطعة تصل بين نقطتين من الدائرة وتمر بالمركز.</div></div></div>
+</section>
+
+<section class="panel">
+<div class="grid">
+<div class="card"><h2>💡 تذكّر</h2><p>إذا كان الشعاع <b>r</b>، فإن القطر <b>d = 2 × r</b>.</p><p>إذن إذا كان الشعاع 4 cm فالقطر 8 cm.</p></div>
+<div class="card"><h2>✏️ كيف أرسم دائرة؟</h2><div class="step"><span class="num">1</span><div>أحدد المركز.</div></div><div class="step"><span class="num">2</span><div>أفتح الفرجار على طول الشعاع المطلوب.</div></div><div class="step"><span class="num">3</span><div>أثبت رأس الفرجار في المركز وأدور بالقلم.</div></div></div>
+</div>
+</section>
+
+<section class="panel">
+<div class="card"><h2>🧩 تطبيق 1</h2><p class="question">شعاع دائرة يساوي 5 cm. كم يساوي قطرها؟</p><div class="choices"><button class="choice" onclick="answer(this,false)">5 cm</button><button class="choice" onclick="answer(this,true)">10 cm</button><button class="choice" onclick="answer(this,false)">15 cm</button></div><div class="feedback"></div></div>
+<div class="card" style="margin-top:16px"><h2>🧩 تطبيق 2</h2><p class="question">أي قطعة تصل المركز بنقطة من الدائرة؟</p><div class="choices"><button class="choice" onclick="answer(this,true)">الشعاع</button><button class="choice" onclick="answer(this,false)">القطر</button><button class="choice" onclick="answer(this,false)">المستقيم</button></div><div class="feedback"></div></div>
+</section>
+
+<section class="panel">
+<div class="card"><h2>🎮 تحدّي السرعة</h2><p>أجب عن السؤال ثم انتقل إلى «إنجازي».</p><div class="question">إذا كان قطر الدائرة 12 cm، فما شعاعها؟</div><div class="choices"><button class="choice" onclick="answer(this,false)">12 cm</button><button class="choice" onclick="answer(this,true)">6 cm</button><button class="choice" onclick="answer(this,false)">24 cm</button></div><div class="feedback"></div></div>
+</section>
+
+<section class="panel">
+<div class="card"><h2>✅ أختبر نفسي</h2><div class="question">صح أم خطأ: القطر يساوي ضعف الشعاع.</div><div class="choices"><button class="choice" onclick="answer(this,true)">صح ✅</button><button class="choice" onclick="answer(this,false)">خطأ ❌</button></div><div class="feedback"></div></div>
+<div class="card" style="margin-top:16px"><div class="question">ما اسم النقطة O في الرسم؟</div><div class="choices"><button class="choice" onclick="answer(this,true)">مركز الدائرة</button><button class="choice" onclick="answer(this,false)">شعاع</button><button class="choice" onclick="answer(this,false)">قطر</button></div><div class="feedback"></div></div>
+</section>
+
+<section class="panel">
+<div class="scoreBox"><div class="badge" id="badge">🌱</div><h2>🏆 إنجازي</h2><div class="score" id="score">0</div><p>نقاط</p><div class="progress"><div class="bar" id="bar"></div></div><p id="message">ابدأ الأنشطة لتجمع النقاط!</p></div>
+</section>
+</div></main>
+
+<footer><div class="footerBrand">LOGICAMATHS</div><div>Travailler aujourd’hui pour réussir demain.</div></footer>
+
+<script>
+let score=0;
+function show(i){document.querySelectorAll('.tab').forEach((b,n)=>b.classList.toggle('active',n===i));document.querySelectorAll('.panel').forEach((p,n)=>p.classList.toggle('active',n===i));}
+function answer(btn,ok){const panel=btn.closest('.panel');const group=btn.parentElement;if(group.dataset.done)return;group.dataset.done="1";group.querySelectorAll('.choice').forEach(x=>x.disabled=true);const f=panel.querySelector('.feedback');if(ok){btn.classList.add('correct');f.textContent='🎉 ممتاز! إجابة صحيحة.';score++;}else{btn.classList.add('wrong');f.textContent='💡 حاول مرة أخرى في النشاط التالي.'}document.getElementById('score').textContent=score;document.getElementById('bar').style.width=Math.min(100,score/6*100)+'%';document.getElementById('badge').textContent=score>=5?'🏆':score>=3?'🥇':'🌱';document.getElementById('message').textContent=score>=5?'رائع! أصبحت بطل الدائرة!':score>=3?'أحسنت! واصل التقدم.':'استمر، أنت تتعلم خطوة بخطوة!'}
+</script>
+</body></html>
