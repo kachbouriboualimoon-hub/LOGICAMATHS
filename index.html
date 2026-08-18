@@ -1,190 +1,45 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Logicamaths — apprendre les mathématiques autrement. Cours, exercices, activités interactives et vidéos.">
-<title>Logicamaths | Accueil</title>
+<!doctype html><html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logicamaths | Mathématiques autrement</title>
 <style>
-:root{
-  --bg:#f6f8fc; --card:#fff; --text:#172033; --muted:#657089;
-  --primary:#2563eb; --primary2:#7c3aed; --border:#e6eaf2;
-  --shadow:0 12px 35px rgba(23,32,51,.09);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
-a{text-decoration:none;color:inherit}
-.container{width:min(1100px,92%);margin:auto}
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-weight:900;font-size:1.25rem;letter-spacing:.5px}
-.logo span{color:var(--primary)}
-.menu{display:flex;gap:18px;align-items:center;font-size:.92rem}
-.menu a:hover{color:var(--primary)}
-.menu-btn{display:none;border:0;background:transparent;font-size:1.5rem}
-.hero{padding:58px 0 42px;background:linear-gradient(135deg,#eef4ff,#f8f1ff 60%,#fff)}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
-.badge{display:inline-block;background:#e8efff;color:#2455c7;border-radius:999px;padding:7px 12px;font-weight:700;font-size:.85rem;margin-bottom:14px}
-h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.02;margin-bottom:16px}
-.gradient{background:linear-gradient(90deg,var(--primary),var(--primary2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:1.08rem;color:var(--muted);max-width:650px;margin-bottom:24px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:13px;font-weight:800;border:1px solid var(--border);transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 8px 20px rgba(37,99,235,.22)}
-.btn-light{background:#fff}
-.hero-card{background:#fff;border:1px solid var(--border);border-radius:26px;padding:26px;box-shadow:var(--shadow)}
-.math-orbit{height:270px;border-radius:20px;background:linear-gradient(145deg,#111827,#263a68);color:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.math-orbit:before{content:"";width:180px;height:180px;border:2px solid rgba(255,255,255,.3);border-radius:50%;position:absolute}
-.math-orbit:after{content:"π";font-size:7rem;font-weight:900;opacity:.12}
-.center-symbol{font-size:3.5rem;font-weight:900;z-index:1}
-.float{position:absolute;font-weight:900;font-size:1.5rem;opacity:.9}
-.f1{top:20px;left:30px}.f2{top:45px;right:35px}.f3{bottom:28px;left:45px}.f4{bottom:35px;right:50px}
-section{padding:54px 0}
-.section-head{text-align:center;margin-bottom:28px}
-.section-head h2{font-size:2rem;margin-bottom:7px}
-.section-head p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:0 7px 22px rgba(23,32,51,.05);transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.icon{font-size:2rem;margin-bottom:12px}
-.card h3{margin-bottom:7px}
-.card p{color:var(--muted);font-size:.95rem;margin-bottom:15px}
-.link{color:var(--primary);font-weight:800}
-.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.level{background:#fff;border:1px solid var(--border);border-radius:18px;padding:20px;text-align:center;font-weight:800}
-.level small{display:block;color:var(--muted);font-weight:500;margin-top:5px}
-.about{background:#111827;color:#fff}
-.about .section-head p{color:#b9c2d4}
-.about-box{max-width:820px;margin:auto;text-align:center}
-.about-box p{color:#d7deea;font-size:1.05rem}
-.cta{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:28px;padding:35px;text-align:center}
-.cta h2{font-size:2rem;margin-bottom:8px}
-.cta p{opacity:.9;margin-bottom:18px}
-footer{padding:30px 0;background:#0d1320;color:#b9c2d4;text-align:center}
-footer strong{color:#fff}
-@media(max-width:800px){
- .menu{display:none;position:absolute;left:0;right:0;top:66px;background:#fff;border-bottom:1px solid var(--border);padding:14px 4%;flex-direction:column;align-items:flex-start}
- .menu.open{display:flex}
- .menu-btn{display:block}
- .hero-grid{grid-template-columns:1fr}
- .hero{padding-top:40px}
- .hero-card{order:-1}
- .cards{grid-template-columns:1fr}
- .levels{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:430px){
- .container{width:91%}
- .nav{height:60px}
- .hero{padding:32px 0}
- .math-orbit{height:220px}
- .btn{width:100%}
- .levels{grid-template-columns:1fr}
- section{padding:42px 0}
-}
-</style>
-</head>
-<body>
-<header>
-  <div class="container nav">
-    <a class="logo" href="#accueil">LOGICA<span>MATHS</span></a>
-    <button class="menu-btn" aria-label="Ouvrir le menu" onclick="toggleMenu()">☰</button>
-    <nav class="menu" id="menu">
-      <a href="#accueil">Accueil</a>
-      <a href="#ressources">Ressources</a>
-      <a href="#niveaux">Niveaux</a>
-      <a href="#apropos">À propos</a>
-    </nav>
-  </div>
-</header>
-
-<main id="accueil">
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="badge">📐 Les mathématiques autrement</span>
-      <h1>Bienvenue sur <span class="gradient">Logicamaths</span></h1>
-      <p>Un espace pour apprendre, comprendre, s’entraîner et progresser en mathématiques grâce aux cours, exercices, vidéos et activités interactives.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#ressources">🚀 Commencer</a>
-        <a class="btn btn-light" href="#niveaux">📚 Choisir mon niveau</a>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="math-orbit">
-        <span class="float f1">x²</span><span class="float f2">π</span>
-        <span class="float f3">√</span><span class="float f4">∑</span>
-        <span class="center-symbol">∫</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ressources">
-  <div class="container">
-    <div class="section-head">
-      <h2>🎯 Explore Logicamaths</h2>
-      <p>Choisis ce dont tu as besoin pour apprendre.</p>
-    </div>
-    <div class="cards">
-      <article class="card"><div class="icon">📖</div><h3>Cours</h3><p>Des notions expliquées simplement, avec des exemples progressifs.</p><a class="link" href="#niveaux">Voir les cours →</a></article>
-      <article class="card"><div class="icon">📝</div><h3>Exercices</h3><p>Entraîne-toi avec des exercices adaptés à ton niveau.</p><a class="link" href="#niveaux">S’entraîner →</a></article>
-      <article class="card"><div class="icon">🎮</div><h3>Activités interactives</h3><p>Apprends en jouant avec des quiz et des activités.</p><a class="link" href="#niveaux">Découvrir →</a></article>
-      <article class="card"><div class="icon">🎵</div><h3>Chansons éducatives</h3><p>Retrouve les notions importantes en musique.</p><a class="link" href="#apropos">Bientôt disponible →</a></article>
-      <article class="card"><div class="icon">🎬</div><h3>Vidéos</h3><p>Des explications courtes et visuelles pour mieux comprendre.</p><a class="link" href="#apropos">Bientôt disponible →</a></article>
-      <article class="card"><div class="icon">🏆</div><h3>Défis</h3><p>Teste tes connaissances et mesure tes progrès.</p><a class="link" href="#niveaux">Commencer →</a></article>
-    </div>
-  </div>
-</section>
-
-<section id="niveaux">
-  <div class="container">
-    <div class="section-head">
-      <h2>📚 Choisis ton niveau</h2>
-      <p>Le site pourra évoluer avec de nouvelles ressources.</p>
-    </div>
-    <div class="levels">
-      <a class="level" href="#">4ème année primaire<small>Apprendre en s’amusant</small></a>
-      <a class="level" href="#">5ème année primaire<small>Comprendre et pratiquer</small></a>
-      <a class="level" href="#">9ème année<small>Progresser efficacement</small></a>
-      <a class="level" href="#">Baccalauréat<small>Préparer la réussite</small></a>
-    </div>
-  </div>
-</section>
-
-<section id="apropos" class="about">
-  <div class="container">
-    <div class="section-head"><h2>💡 Pourquoi Logicamaths ?</h2><p>Une approche centrée sur la compréhension.</p></div>
-    <div class="about-box">
-      <p>Logicamaths a pour objectif de rendre les mathématiques plus accessibles, plus visuelles et plus interactives. Ici, on apprend à comprendre avant de mémoriser, à pratiquer avant de se décourager et à progresser pas à pas.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="cta">
-      <h2>Prêt à progresser ? 🚀</h2>
-      <p>Choisis ton niveau et commence ton parcours mathématique.</p>
-      <a class="btn btn-light" href="#niveaux">Commencer maintenant</a>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <p><strong>LOGICAMATHS</strong></p>
-    <p>Travailler aujourd’hui pour réussir demain.</p>
-    <p>© <span id="year"></span> Logicamaths</p>
-  </div>
-</footer>
-
+:root{--b:#2563eb;--v:#7c3aed;--g:#16a34a;--ink:#172033;--mut:#647089;--bg:#f5f7fb;--line:#e5e9f2}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}a{text-decoration:none;color:inherit}.w{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#fffffff2;border-bottom:1px solid var(--line)}nav{height:64px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:1.25rem;font-weight:950}.logo b{color:var(--b)}.links{display:flex;gap:18px;font-weight:700}.menu{display:none;background:none;border:0;font-size:1.5rem}
+.hero{padding:50px 0;background:linear-gradient(135deg,#eaf2ff,#f7efff)}.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.pill{display:inline-block;background:#e0ebff;color:#2455c7;padding:7px 12px;border-radius:99px;font-weight:800;font-size:.82rem;margin-bottom:14px}
+h1{font-size:clamp(2.3rem,6vw,4.5rem);line-height:1.03;margin-bottom:15px}.grad{background:linear-gradient(90deg,var(--b),var(--v));color:transparent;background-clip:text}.hero p{color:var(--mut);font-size:1.08rem;margin-bottom:20px}.buttons{display:flex;gap:10px;flex-wrap:wrap}.btn{padding:12px 17px;border-radius:13px;border:1px solid var(--line);font-weight:850;display:inline-block}.primary{background:var(--b);color:#fff;border-color:var(--b)}
+.visual{height:280px;background:#111827;border-radius:25px;display:grid;place-items:center;position:relative}.circ{width:175px;height:175px;border:4px solid white;border-radius:50%;position:relative}.circ:after{content:"";position:absolute;width:87px;height:3px;background:white;left:50%;top:50%;transform-origin:left}.f{position:absolute;color:white;font-size:1.5rem;font-weight:900}.a{top:20px;left:25px}.c{top:25px;right:25px}.d{bottom:25px;left:30px}.e{bottom:25px;right:30px}
+section{padding:50px 0}.title{text-align:center;margin-bottom:26px}.title h2{font-size:2rem}.title p{color:var(--mut)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card,.box{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 7px 20px #17203309}.emoji{font-size:2rem}.card p,.box p{color:var(--mut);margin:6px 0 13px}.go{color:var(--b);font-weight:850}.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.level{text-align:center;background:white;border:1px solid var(--line);border-radius:18px;padding:20px;font-weight:900}.level small{display:block;color:var(--mut);font-weight:500;margin-top:5px}
+.lesson{background:#fff}.lessonbox{background:linear-gradient(135deg,#fff,#f3f7ff);border:1px solid var(--line);border-radius:24px;padding:22px}.head{display:flex;justify-content:space-between;gap:12px;margin-bottom:16px}.tag{background:#dcfce7;color:#166534;padding:6px 10px;border-radius:99px;font-weight:800;height:max-content}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:16px}.tab{white-space:nowrap;padding:10px 13px;border:1px solid var(--line);background:white;border-radius:11px;font-weight:800}.tab.active{background:var(--b);color:white}.panel{display:none}.panel.active{display:block}.tw{display:grid;grid-template-columns:1fr 1fr;gap:16px}.demo{height:210px;display:grid;place-items:center;background:#f7f9fd;border-radius:15px}.bc{width:145px;height:145px;border:4px solid var(--b);border-radius:50%;position:relative}.bc:before{content:"O";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:900}.bc:after{content:"";position:absolute;width:72px;height:3px;background:var(--v);left:50%;top:50%}.choices{display:grid;gap:9px;margin-top:12px}.choice{padding:11px;border:1px solid var(--line);background:white;border-radius:11px;text-align:left;font-weight:750}.correct{background:#dcfce7!important}.wrong{background:#fee2e2!important}.feedback{font-weight:800;margin-top:9px;min-height:24px}.score{background:#111827;color:white;border-radius:16px;text-align:center;padding:16px}.score strong{font-size:1.6rem}
+footer{background:#0d1320;color:#b8c1d2;text-align:center;padding:30px}.fl{color:white;font-weight:950}
+@media(max-width:800px){.hg{grid-template-columns:1fr}.visual{order:-1}.links{display:none;position:absolute;top:64px;left:0;right:0;background:white;padding:14px 4%;flex-direction:column}.links.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr}.levels{grid-template-columns:repeat(2,1fr)}.tw{grid-template-columns:1fr}}
+@media(max-width:430px){.w{width:91%}.buttons .btn{width:100%;text-align:center}.levels{grid-template-columns:1fr}.head{flex-direction:column}.visual{height:220px}}
+</style></head><body>
+<header><div class="w"><nav><a class="logo" href="#home">LOGICA<b>MATHS</b></a><button class="menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button><div class="links"><a href="#home">Accueil</a><a href="#resources">Ressources</a><a href="#levels">Niveaux</a><a href="#circle">La leçon</a></div></nav></div></header>
+<main id="home">
+<section class="hero"><div class="w hg"><div><span class="pill">📐 Les mathématiques autrement</span><h1>Bienvenue sur <span class="grad">Logicamaths</span></h1><p>Apprendre, comprendre, pratiquer et progresser grâce à des cours clairs, des exercices et des activités interactives.</p><div class="buttons"><a class="btn primary" href="#levels">🚀 Commencer</a><a class="btn" href="#circle">🎮 Essayer</a></div></div><div class="visual"><span class="f a">π</span><span class="f c">x²</span><span class="f d">√</span><span class="f e">∑</span><div class="circ"></div></div></div></section>
+<section id="resources"><div class="w"><div class="title"><h2>🎯 Nos ressources</h2><p>Une plateforme qui évoluera avec tes contenus.</p></div><div class="grid">
+<div class="card"><div class="emoji">📖</div><h3>Cours</h3><p>Explications simples et visuelles.</p><a class="go" href="#circle">Explorer →</a></div>
+<div class="card"><div class="emoji">📝</div><h3>Exercices</h3><p>Entraînement progressif.</p><a class="go" href="#circle">S'entraîner →</a></div>
+<div class="card"><div class="emoji">🎮</div><h3>Interactif</h3><p>Quiz et feedback immédiat.</p><a class="go" href="#circle">Jouer →</a></div>
+<div class="card"><div class="emoji">🎵</div><h3>Chansons</h3><p>Les mathématiques en musique.</p><a class="go" href="#resources">Bientôt →</a></div>
+<div class="card"><div class="emoji">🎬</div><h3>Vidéos</h3><p>Explications courtes et visuelles.</p><a class="go" href="#resources">Bientôt →</a></div>
+<div class="card"><div class="emoji">🏆</div><h3>Défis</h3><p>Mesure tes progrès.</p><a class="go" href="#circle">Défi →</a></div>
+</div></div></section>
+<section id="levels"><div class="w"><div class="title"><h2>📚 Choisis ton niveau</h2><p>Nous commençons par la 4ème année primaire.</p></div><div class="levels">
+<a class="level" href="#circle">🟢 4ème primaire<small>Activités interactives</small></a><a class="level" href="#">🔵 5ème primaire<small>À venir</small></a><a class="level" href="#">🟠 9ème année<small>À venir</small></a><a class="level" href="#">🔴 Bac<small>À venir</small></a>
+</div></div></section>
+<section id="circle" class="lesson"><div class="w"><div class="title"><h2>🟢 4ème année primaire — الدائرة</h2><p>Découvre le cercle, son centre, son rayon et son diamètre.</p></div><div class="lessonbox"><div class="head"><div><h3>📐 Leçon interactive : الدائرة</h3><p>Objectif : reconnaître les éléments d'un cercle.</p></div><span class="tag">10 ans</span></div>
+<div class="tabs"><button class="tab active" onclick="tab(0)">📖 أتعلم</button><button class="tab" onclick="tab(1)">💡 أفهم</button><button class="tab" onclick="tab(2)">🧩 أطبّق</button><button class="tab" onclick="tab(3)">🎮 ألعب</button><button class="tab" onclick="tab(4)">🏆 إنجازي</button></div>
+<div class="panel active"><div class="tw"><div class="box"><h3>🔵 الدائرة</h3><p>الدائرة هي مجموعة النقاط التي تبعد نفس المسافة عن نقطة ثابتة تسمى <b>المركز</b>. هذه المسافة تسمى <b>الشعاع</b>.</p></div><div class="demo"><div class="bc"></div></div></div></div>
+<div class="panel"><div class="tw"><div class="box"><h3>📍 المركز</h3><p>نرمز للمركز بالحرف <b>O</b>.</p></div><div class="box"><h3>📏 الشعاع والقطر</h3><p>الشعاع يصل المركز بنقطة من الدائرة. القطر يمر بالمركز ويربط نقطتين من الدائرة، وطوله ضعف الشعاع.</p></div></div></div>
+<div class="panel"><div class="box"><h3>🧩 تطبيق</h3><p>إذا كان شعاع دائرة يساوي <b>4 cm</b>، فما طول قطرها؟</p><div class="choices"><button class="choice" onclick="ans(this,false)">4 cm</button><button class="choice" onclick="ans(this,true)">8 cm</button><button class="choice" onclick="ans(this,false)">12 cm</button></div><div class="feedback"></div></div></div>
+<div class="panel"><div class="box"><h3>🎮 تحدّي سريع</h3><p><b>أي قطعة تصل المركز بنقطة من الدائرة؟</b></p><div class="choices"><button class="choice" onclick="ans(this,true)">الشعاع</button><button class="choice" onclick="ans(this,false)">القطر</button><button class="choice" onclick="ans(this,false)">المستقيم</button></div><div class="feedback"></div></div></div>
+<div class="panel"><div class="score">🌟 نقاطك الحالية<br><strong id="score">0</strong> / 2</div><p style="text-align:center;margin-top:10px;color:var(--mut)">واصل التعلم! سنضيف المزيد من الأنشطة.</p></div>
+</div></div></section></main>
+<footer><div class="fl">LOGICAMATHS</div><p>Travailler aujourd’hui pour réussir demain.</p><p>© <span id="year"></span> Logicamaths</p></footer>
 <script>
-function toggleMenu(){document.getElementById('menu').classList.toggle('open')}
-document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+let score=0;
+function tab(i){document.querySelectorAll('.tab').forEach((x,n)=>x.classList.toggle('active',n===i));document.querySelectorAll('.panel').forEach((x,n)=>x.classList.toggle('active',n===i))}
+function ans(b,ok){let p=b.closest('.panel');p.querySelectorAll('.choice').forEach(x=>x.disabled=true);let f=p.querySelector('.feedback');if(ok){b.classList.add('correct');f.textContent='🎉 ممتاز! إجابة صحيحة.';score=Math.min(2,score+1)}else{b.classList.add('wrong');f.textContent='💡 حاول في النشاط التالي.'}document.getElementById('score').textContent=score}
 document.getElementById('year').textContent=new Date().getFullYear();
-</script>
-</body>
-</html>
+</script></body></html>
