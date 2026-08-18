@@ -42,4 +42,4 @@ let score=0;
 function tab(i){document.querySelectorAll('.tab').forEach((x,n)=>x.classList.toggle('active',n===i));document.querySelectorAll('.panel').forEach((x,n)=>x.classList.toggle('active',n===i))}
 function ans(b,ok){let p=b.closest('.panel');p.querySelectorAll('.choice').forEach(x=>x.disabled=true);let f=p.querySelector('.feedback');if(ok){b.classList.add('correct');f.textContent='🎉 ممتاز! إجابة صحيحة.';score=Math.min(2,score+1)}else{b.classList.add('wrong');f.textContent='💡 حاول في النشاط التالي.'}document.getElementById('score').textContent=score}
 document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>
+</script></body></html>0
