@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombres complexes - BAC Tunisie</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        MathJax = { tex: { inlineMath: [['$', '$']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/function-plot@1.24.0/dist/function-plot.js"></script>
+</head>
+<body>
+<a href="../index.html" style="
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+" 
+onmouseover="this.style.transform='scale(1.12)'; this.style.background='rgba(255,255,255,0.18)'; this.style.boxShadow='0 0 30px rgba(255,255,255,0.15)'" 
+onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(255,255,255,0.06)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.5)'">
+    🏠
+</a>
+    <header>
+        <div class="header-content">
+            <a class="logo" onclick="navigateTo('accueil'); return false;">
+                <img src="assets/images/logo.png" alt="Nombres complexes">
+                <div>
+                    <span class="logo-text">LOGICAMATHS <span class="accent">الباك</span></span>
+                    <span class="logo-sub">COMPLEXE 3.1</span>
+                </div>
+            </a>
+            <nav id="mainNav"></nav>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </header>
+
+    <main><div id="app"></div></main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="Nombres complexes">
+            <span class="footer-brand">LOGICAMATHS الباك</span>
+        </div>
+        <p class="footer-author">Conçu par <strong>Prof. KACHBOURI BOUALI</strong></p>
+        <p class="footer-copy">© 2026 - Nombres complexes - Bac Tunisie</p>
+<p class="footer-copy"> D17 : 93857463</p>
+
+    </footer>
+
+    <!-- Données -->
+    <script src="data.js"></script>
+    <script src="data/chapitre1.js"></script>
+    <script src="data/chapitre2.js"></script>
+    <script src="data/chapitre3.js"></script>
+    <script src="data/chapitre4.js"></script>
+    <script src="data/chapitre5.js"></script>
+    <script src="data/Resume.js"></script>
+    <script src="data/fiche.js"></script>
+    <script src="data/aideMemoire.js"></script>
+    <script src="data/problemes_base.js"></script>
+    <script src="data/problemes/part1.js"></script>
+    <script src="data/problemes/part2.js"></script>
+    <script src="data/problemes/part3.js"></script>
+    <script src="data/problemes/part4.js"></script>
+    <script src="data/problemes/part5.js"></script>
+    <script src="data/problemes/part6.js"></script>
+    <script src="data/problemes/part7.js"></script>
+    <script src="data/problemes/part8.js"></script>
+    <script src="data/problemes/part9.js"></script>
+    <script src="data/problemes/part10.js"></script>
+        <script src="data/problemes/part11.js"></script>
+            <script src="data/problemes/part12.js"></script>
+                <script src="data/problemes/part13.js"></script>
+                    <script src="data/problemes/part14.js"></script>
+                        <script src="data/problemes/part15.js"></script>
+                            <script src="data/problemes/part16.js"></script>
+                                <script src="data/problemes/part17.js"></script>
+                                    <script src="data/problemes/part18.js"></script>
+                                        <script src="data/problemes/part19.js"></script>
+    <!-- ... ajoutez autant de parties de problèmes que nécessaire -->
+    <script src="script.js"></script>
+</body>
+</html>
