@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفية بن مالك - LOGICAMATHS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container app-wrapper" id="appContainer">
+
+        <div id="playlistView" class="view playlist-view">
+            <a href="index.html" class="back-btn">→ العودة</a>
+            
+            <div class="project-header">
+                <div class="platform-badge">LOGICAMATHS الباك</div>
+                <div class="project-title">الفية بن مالك راب</div>
+                <div class="author-name">بقلم KACHBOURI BOUALI</div>
+            </div>
+
+            <div class="playlist-scroll" id="playlistList">
+                <!-- Remplie par JavaScript -->
+            </div>
+
+            <div id="miniPlayer" class="now-playing-bar">
+                <div class="mini-grabber"></div>
+                <div class="mini-info">
+                    <span class="mini-title" id="miniSongTitle">اختر مقطعاً</span>
+                    <span class="mini-artist">KACHBOURI BOUALI • الفية بن مالك</span>
+                </div>
+                <button id="miniPlayBtn" class="mini-play-btn">▶️</button>
+            </div>
+        </div>
+
+        <div id="playerView" class="view player-view">
+            <div class="cover-wrapper" id="coverWrapper">
+                <div class="cover" id="coverArt"></div>
+            </div>
+
+            <div class="song-info">
+                <div class="song-title" id="songTitle">اختر مقطعاً</div>
+                <div class="song-artist">KACHBOURI BOUALI • الفية بن مالك</div>
+            </div>
+
+            <!-- Jauge dorée -->
+            <div class="progress-container">
+                <span class="current-time" id="currentTime">00:00</span>
+                <div class="progress-track" id="progressTrack">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="total-time" id="totalTime">00:00</span>
+            </div>
+
+            <!-- ===== CONTROLES AVEC RÉPÉTER ET SHUFFLE ===== -->
+            <div class="controls">
+                <button id="repeatBtn" title="تكرار" class="ctrl-btn repeat-btn">🔁</button>
+                <button id="prevBtn" title="المقطع السابق" class="ctrl-btn prev-btn">⏮️</button>
+                <button id="playBtn" title="تشغيل / إيقاف" class="ctrl-btn play-btn">▶️</button>
+                <button id="nextBtn" title="المقطع التالي" class="ctrl-btn next-btn">⏭️</button>
+                <button id="shuffleBtn" title="خلط" class="ctrl-btn shuffle-btn">🔀</button>
+            </div>
+
+            <div class="about-song">
+                <div class="about-left">
+                    <span class="about-label">المؤلف</span>
+                    <span class="about-value">KACHBOURI BOUALI</span>
+                </div>
+                <div class="about-right">
+                    <span class="about-label">المنصة</span>
+                    <span class="about-value">LOGICAMATHS الباك</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===============================================
+        // LISTE DES PISTES – À MODIFIER ICI
+        // ===============================================
+        window.songList = [
+                { 
+                title: "page 1", 
+                file: "music/alfiya/p1.mp3",
+                cover: "covers/p1.jpg"
+            },
+            { 
+                title: "page 2", 
+                file: "music/alfiya/p2.mp3",
+                cover: "covers/p2.jpg"
+            },
+            { 
+                title: "page 3 ", 
+                file: "music/alfiya/p3.mp3",
+                cover: "covers/p3.jpg"
+            },
+               { 
+                title: "page 4", 
+                file: "music/alfiya/p4.mp3",
+                cover: "covers/p4.jpg"
+            },
+            { 
+                title: "page 5", 
+                file: "music/alfiya/p5.mp3",
+                cover: "covers/p5.jpg"
+            }
+        ];
+        window.artistName = "KACHBOURI BOUALI";
+        window.projectName = "الفية بن مالك";
+        window.platformName = "LOGICAMATHS الباك";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

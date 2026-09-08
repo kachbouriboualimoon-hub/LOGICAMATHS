@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATHSMUSIC - LOGICAMATHS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container app-wrapper" id="appContainer">
+
+        <div id="playlistView" class="view playlist-view">
+            <a href="index.html" class="back-btn">← Retour</a>
+            
+            <div class="project-header">
+                <div class="platform-badge">LOGICAMATHS الباك</div>
+                <div class="project-title">MATHSMUSIC</div>
+                <div class="author-name">par KACHBOURI BOUALI</div>
+            </div>
+
+            <div class="playlist-scroll" id="playlistList">
+                <!-- Remplie par JavaScript -->
+            </div>
+
+            <div id="miniPlayer" class="now-playing-bar">
+                <div class="mini-grabber"></div>
+                <div class="mini-info">
+                    <span class="mini-title" id="miniSongTitle">Choisissez une piste</span>
+                    <span class="mini-artist">KACHBOURI BOUALI • MATHSMUSIC</span>
+                </div>
+                <button id="miniPlayBtn" class="mini-play-btn">▶️</button>
+            </div>
+        </div>
+
+        <div id="playerView" class="view player-view">
+            <div class="cover-wrapper" id="coverWrapper">
+                <div class="cover" id="coverArt"></div>
+            </div>
+
+            <div class="song-info">
+                <div class="song-title" id="songTitle">Sélectionnez une piste</div>
+                <div class="song-artist">KACHBOURI BOUALI • MATHSMUSIC</div>
+            </div>
+
+            <!-- Jauge dorée -->
+            <div class="progress-container">
+                <span class="current-time" id="currentTime">00:00</span>
+                <div class="progress-track" id="progressTrack">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="total-time" id="totalTime">00:00</span>
+            </div>
+
+            <!-- ===== CONTROLES AVEC RÉPÉTER ET SHUFFLE ===== -->
+            <div class="controls">
+                <button id="repeatBtn" title="Répéter" class="ctrl-btn repeat-btn">🔁</button>
+                <button id="prevBtn" title="Piste précédente" class="ctrl-btn prev-btn">⏮️</button>
+                <button id="playBtn" title="Lecture / Pause" class="ctrl-btn play-btn">▶️</button>
+                <button id="nextBtn" title="Piste suivante" class="ctrl-btn next-btn">⏭️</button>
+                <button id="shuffleBtn" title="Mélanger" class="ctrl-btn shuffle-btn">🔀</button>
+            </div>
+
+            <div class="about-song">
+                <div class="about-left">
+                    <span class="about-label">Auteur</span>
+                    <span class="about-value">KACHBOURI BOUALI</span>
+                </div>
+                <div class="about-right">
+                    <span class="about-label">Plateforme</span>
+                    <span class="about-value">LOGICAMATHS الباك</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===============================================
+        // LISTE DES PISTES – À MODIFIER ICI
+        // ===============================================
+        window.songList = [
+                { 
+                title: "NC-00 ARABIC C", 
+                file: "music/mathsmusic/NC-00 ARABIC C.mp3",
+                cover: "covers/0.jpg"
+            },
+            { 
+                title: "NC-00 FRENCH C", 
+                file: "music/mathsmusic/NC-00 FRENCH C.mp3",
+                cover: "covers/0.jpg"
+            },
+            { 
+                title: "NC-00 ENGLISH C", 
+                file: "music/mathsmusic/NC-00 ENGLISH C.mp3",
+                cover: "covers/0.jpg"
+            },
+            
+                        { 
+                title: "NC-00 ENGLISH AF", 
+                file: "music/mathsmusic/NC-00 ENGLISH AF.mp3",
+                cover: "covers/0.jpg"
+            },
+            
+                        { 
+                title: "NC-00 FRENCH AF", 
+                file: "music/mathsmusic/NC-00 FRENCH AF.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ARABIC AF", 
+                file: "music/mathsmusic/NC-00 ARABIC AF.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ENGLISH AF1", 
+                file: "music/mathsmusic/NC-00 ENGLISH AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ARABIC AF1", 
+                file: "music/mathsmusic/NC-00 ARABIC AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF1", 
+                file: "music/mathsmusic/NC-00 FRENCH AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF2", 
+                file: "music/mathsmusic/NC-00 FRENCH AF2.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF3", 
+                file: "music/mathsmusic/NC-00 FRENCH AF3.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF4", 
+                file: "music/mathsmusic/NC-00 FRENCH AF4.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-01 ARABIC OAF", 
+                file: "music/mathsmusic/NC-01 ARABIC OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 FRENCH OAF", 
+                file: "music/mathsmusic/NC-01 FRENCH OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 ENGLISH OAF", 
+                file: "music/mathsmusic/NC-01 ENGLISH OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 FRENCH OAF1", 
+                file: "music/mathsmusic/NC-01 FRENCH OAF1.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 ENGLISH OAF1", 
+                file: "music/mathsmusic/NC-01 ENGLISH OAF1.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-02 ARABIC GR", 
+                file: "music/mathsmusic/NC-02 ARABIC GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 FRENCH GR", 
+                file: "music/mathsmusic/NC-02 FRENCH GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 ENGLISH GR", 
+                file: "music/mathsmusic/NC-02 ENGLISH GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 FRENCH GR1", 
+                file: "music/mathsmusic/NC-02 FRENCH GR1.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 ENGLISH GR1", 
+                file: "music/mathsmusic/NC-02 ENGLISH GR1.mp3",
+                cover: "covers/2.jpg"
+            },
+                         { 
+                title: "NC-03 ARABIC ARG", 
+                file: "music/mathsmusic/NC-03 ARABIC ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG", 
+                file: "music/mathsmusic/NC-03 FRENCH ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG", 
+                file: "music/mathsmusic/NC-03 ENGLISH ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+            
+                                     { 
+                title: "NC-03 ARABIC ARG1", 
+                file: "music/mathsmusic/NC-03 ARABIC ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG1", 
+                file: "music/mathsmusic/NC-03 FRENCH ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG1", 
+                file: "music/mathsmusic/NC-03 ENGLISH ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+            
+                                     { 
+                title: "NC-03 ARABIC ARG2", 
+                file: "music/mathsmusic/NC-03 ARABIC ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG2", 
+                file: "music/mathsmusic/NC-03 FRENCH ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG2", 
+                file: "music/mathsmusic/NC-03 ENGLISH ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-04 ARABIC FTE", 
+                file: "music/mathsmusic/NC-04 ARABIC FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 FRENCH FTE", 
+                file: "music/mathsmusic/NC-04 FRENCH FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 ENGLISH FTE", 
+                file: "music/mathsmusic/NC-04 ENGLISH FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                                     { 
+                title: "NC-04 ARABIC FTE1", 
+                file: "music/mathsmusic/NC-04 ARABIC FTE1.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 FRENCH FTE1", 
+                file: "music/mathsmusic/NC-04 FRENCH FTE1.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 ENGLISH FTE1", 
+                file: "music/mathsmusic/NC-04 ENGLISH FTE1.mp3",
+                cover: "covers/4.jpg"
+            }
+            
+        ];
+        window.artistName = "KACHBOURI BOUALI";
+        window.projectName = "MATHSMUSIC";
+        window.platformName = "LOGICAMATHS الباك";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

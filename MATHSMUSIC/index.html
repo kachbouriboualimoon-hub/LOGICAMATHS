@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Univers Musical</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="../index.html" style="
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+" 
+onmouseover="this.style.transform='scale(1.12)'; this.style.background='rgba(255,255,255,0.18)'; this.style.boxShadow='0 0 30px rgba(255,255,255,0.15)'" 
+onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(255,255,255,0.06)'; this.style.boxShadow='0 8px 32px rgba(0,0,0,0.5)'">
+    🏠
+</a>
+    <div class="container home">
+        <h1 style="text-align:center; margin-bottom:20px;">🎧 Choisissez votre univers</h1>
+        <div class="card-grid">
+            
+            <!-- === CARTE MATHSMUSIC === -->
+            <a href="mathsmusic.html" class="card card-mathsmusic">
+                <div class="card-content">
+                    <p class="card-subtitle">WELCOME TO</p>
+                    <h2>MATHSMUSIC</h2>
+                    <p class="card-tagline">Harmony in Equations</p>
+                </div>
+            </a>
+            
+            <!-- === CARTE الفية بن مالك (avec la nouvelle image) === -->
+            <a href="alfiya.html" class="card card-alfiya-image">
+                <div class="card-content">
+                    <h2>الفية بن مالك راب</h2>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</body>
+</html>

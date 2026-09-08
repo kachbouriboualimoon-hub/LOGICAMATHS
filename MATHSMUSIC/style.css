@@ -1,0 +1,756 @@
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ============================================================
+   CONTENEUR PRINCIPAL (avec fond dynamique)
+   ============================================================ */
+.container {
+    max-width: 450px;
+    width: 100%;
+    background: #121212;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    min-height: 80vh;
+    position: relative;
+}
+
+.app-wrapper {
+    background-color: #121212;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+    position: relative;
+    border-radius: 32px;
+    min-height: 80vh;
+}
+
+.app-wrapper.has-cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1;
+    border-radius: 32px;
+    pointer-events: none;
+}
+
+.app-wrapper > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================================
+   VUES (Playlist / Lecteur)
+   ============================================================ */
+.view {
+    padding: 25px 20px 30px;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.4s ease;
+}
+
+.playlist-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;
+    transform: translateY(0);
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
+.playlist-view.hidden {
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.player-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: transparent;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px 30px;
+}
+
+.player-view.open {
+    transform: translateY(0);
+}
+
+/* ============================================================
+   BOUTON RETOUR
+   ============================================================ */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #1db954;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    z-index: 20;
+    position: relative;
+}
+.back-btn:hover {
+    color: #fff;
+}
+
+/* ============================================================
+   EN-TÊTE PROJET
+   ============================================================ */
+.project-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.platform-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.7rem;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+}
+
+.project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    letter-spacing: 1px;
+}
+
+.author-name {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* ============================================================
+   COVER & SWIPE
+   ============================================================ */
+.cover-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    flex-shrink: 0;
+}
+.cover-wrapper:active {
+    cursor: grabbing;
+}
+
+.cover {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ============================================================
+   INFOS CHANSON
+   ============================================================ */
+.song-info {
+    text-align: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.song-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #f5f5f5;
+    margin-bottom: 4px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.song-artist {
+    font-size: 0.9rem;
+    color: #ccc;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* ============================================================
+   JAUGE À LIQUIDE DORÉ
+   ============================================================ */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.current-time,
+.total-time {
+    font-size: 0.8rem;
+    color: #ccc;
+    min-width: 40px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.progress-track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #f9d423, #f5b041, #f39c12);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
+    position: relative;
+}
+
+/* Effet de brillance */
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ============================================================
+   CONTROLES – 5 BOUTONS (🔁 ⏮️ ▶️ ⏭️ 🔀)
+   ============================================================ */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+}
+
+.ctrl-btn {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    outline: none !important;
+    padding: 0;
+}
+
+.ctrl-btn:hover {
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.ctrl-btn:active {
+    transform: scale(0.92);
+}
+
+/* Bouton Lecture / Pause – style Suno (grand, blanc) */
+.play-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease;
+}
+
+.play-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.play-btn:active {
+    transform: scale(0.88);
+}
+
+/* Animation de pulsation légère (pas d'ombre) */
+.play-btn.pulsing {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
+/* Boutons secondaires : ⏮️ ⏭️ 🔁 🔀 */
+.prev-btn, .next-btn, .repeat-btn, .shuffle-btn {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.4);
+    width: 38px;
+    height: 38px;
+}
+
+.prev-btn:hover, .next-btn:hover,
+.repeat-btn:hover, .shuffle-btn:hover {
+    color: #fff;
+}
+
+/* État actif pour répéter et shuffle (vert) */
+.repeat-btn.active, .shuffle-btn.active {
+    color: #1db954;
+}
+
+/* ============================================================
+   PLAYLIST (liste défilante)
+   ============================================================ */
+.playlist-scroll {
+    flex: 1;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+.playlist-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+.playlist-scroll::-webkit-scrollbar-thumb {
+    background: #1db954;
+    border-radius: 10px;
+}
+.playlist-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-bottom: 4px;
+    border-left: 3px solid transparent;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+}
+.playlist-item:hover {
+    background: rgba(255,255,255,0.05);
+}
+.playlist-item.active {
+    background: rgba(29, 185, 84, 0.2);
+    border-left-color: #1db954;
+}
+.playlist-item .playlist-num {
+    color: #888;
+    font-weight: 500;
+    font-size: 0.9rem;
+    min-width: 30px;
+}
+.playlist-item .playlist-title {
+    color: #eee;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.playlist-item.active .playlist-title {
+    color: #1db954;
+    font-weight: 500;
+}
+
+/* ============================================================
+   BARRE "EN COURS" (mini lecteur)
+   ============================================================ */
+.now-playing-bar {
+    margin-top: auto;
+    background: rgba(30,30,30,0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.08);
+    flex-shrink: 0;
+    touch-action: none;
+    user-select: none;
+    transition: background 0.2s;
+}
+.now-playing-bar:hover {
+    background: rgba(40,40,40,0.9);
+}
+
+.mini-grabber {
+    width: 30px;
+    height: 4px;
+    background: #555;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-right: 4px;
+}
+.mini-info {
+    flex: 1;
+    min-width: 0;
+}
+.mini-title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #eee;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mini-artist {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+/* Mini bouton play – même style que le grand */
+.mini-play-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+.mini-play-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   ABOUT (dans le lecteur)
+   ============================================================ */
+.about-song {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.about-left,
+.about-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.about-value {
+    font-size: 0.75rem;
+    color: #ddd;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.about-right .about-value {
+    direction: ltr;
+}
+
+/* ============================================================
+   PAGE D'ACCUEIL (CARTES)
+   ============================================================ */
+.home .card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.card {
+    display: block;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* ---- CARTE MATHSMUSIC ---- */
+.card-mathsmusic {
+    background-image: url('images/mathsmusic.webp');
+    background-size: cover;
+    background-position: center;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.card-mathsmusic::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.card-mathsmusic .card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.card-mathsmusic .card-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+
+.card-mathsmusic h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+
+.card-mathsmusic .card-tagline {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.card-mathsmusic:hover {
+    transform: scale(1.03);
+    border-color: #1db954;
+}
+
+/* ---- CARTE ALFIYA ---- */
+.card-alfiya-image {
+    background-image: url('images/alfiya.webp');
+    background-size: cover;
+    background-position: center;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.card-alfiya-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.card-alfiya-image .card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+.card-alfiya-image .card-subtitle-arabic {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #f5d742;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+}
+
+.card-alfiya-image h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4px;
+    letter-spacing: 1px;
+}
+
+.card-alfiya-image .card-tagline {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.card-alfiya-image .card-author {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 4px;
+}
+
+.card-alfiya-image:hover {
+    transform: scale(1.03);
+    border-color: #1db954;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 480px) {
+    .view {
+        padding: 20px 15px;
+    }
+    .cover {
+        width: 120px;
+        height: 120px;
+        font-size: 3.5rem;
+    }
+    .controls {
+        gap: 10px;
+    }
+    .ctrl-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    .play-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+    .prev-btn, .next-btn, .repeat-btn, .shuffle-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    .song-title {
+        font-size: 1.1rem;
+    }
+    .playlist-scroll {
+        max-height: 45vh;
+    }
+
+    /* Cartes responsive */
+    .card-mathsmusic,
+    .card-alfiya-image {
+        min-height: 160px;
+        padding: 20px 15px;
+    }
+    .card-mathsmusic h2 {
+        font-size: 1.4rem;
+    }
+    .card-alfiya-image h2 {
+        font-size: 1.3rem;
+    }
+    .card-mathsmusic .card-subtitle {
+        font-size: 0.7rem;
+    }
+    .card-alfiya-image .card-subtitle-arabic {
+        font-size: 0.85rem;
+    }
+}
