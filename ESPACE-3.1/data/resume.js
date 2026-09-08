@@ -5,7 +5,7 @@
 
 // Objet contenant les résumés pour chaque chapitre
 const resumes = {
-    1: {
+  1: {
         titre: 'Vecteurs de l\'espace',
         contenu: `
             <h4>🔹 Notions essentielles</h4>
