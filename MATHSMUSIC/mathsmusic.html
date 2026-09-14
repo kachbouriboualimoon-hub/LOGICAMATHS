@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATHSMUSIC - LOGICAMATHS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container app-wrapper" id="appContainer">
+
+        <div id="playlistView" class="view playlist-view">
+            <a href="index.html" class="back-btn">← Retour</a>
+            
+            <div class="project-header">
+                <div class="platform-badge">LOGICAMATHS الباك</div>
+                <div class="project-title">MATHSMUSIC</div>
+                <div class="author-name">par KACHBOURI BOUALI</div>
+            </div>
+
+            <div class="playlist-scroll" id="playlistList">
+                <!-- Remplie par JavaScript -->
+            </div>
+
+            <div id="miniPlayer" class="now-playing-bar">
+                <div class="mini-grabber"></div>
+                <div class="mini-info">
+                    <span class="mini-title" id="miniSongTitle">Choisissez une piste</span>
+                    <span class="mini-artist">KACHBOURI BOUALI • MATHSMUSIC</span>
+                </div>
+                <button id="miniPlayBtn" class="mini-play-btn">▶️</button>
+            </div>
+        </div>
+
+        <div id="playerView" class="view player-view">
+            <div class="cover-wrapper" id="coverWrapper">
+                <div class="cover" id="coverArt"></div>
+            </div>
+
+            <div class="song-info">
+                <div class="song-title" id="songTitle">Sélectionnez une piste</div>
+                <div class="song-artist">KACHBOURI BOUALI • MATHSMUSIC</div>
+            </div>
+
+            <!-- Jauge dorée -->
+            <div class="progress-container">
+                <span class="current-time" id="currentTime">00:00</span>
+                <div class="progress-track" id="progressTrack">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="total-time" id="totalTime">00:00</span>
+            </div>
+
+            <!-- ===== CONTROLES AVEC RÉPÉTER ET SHUFFLE ===== -->
+            <div class="controls">
+                <button id="repeatBtn" title="Répéter" class="ctrl-btn repeat-btn">🔁</button>
+                <button id="prevBtn" title="Piste précédente" class="ctrl-btn prev-btn">⏮️</button>
+                <button id="playBtn" title="Lecture / Pause" class="ctrl-btn play-btn">▶️</button>
+                <button id="nextBtn" title="Piste suivante" class="ctrl-btn next-btn">⏭️</button>
+                <button id="shuffleBtn" title="Mélanger" class="ctrl-btn shuffle-btn">🔀</button>
+            </div>
+
+            <div class="about-song">
+                <div class="about-left">
+                    <span class="about-label">Auteur</span>
+                    <span class="about-value">KACHBOURI BOUALI</span>
+                </div>
+                <div class="about-right">
+                    <span class="about-label">Plateforme</span>
+                    <span class="about-value">LOGICAMATHS الباك</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===============================================
+        // LISTE DES PISTES – À MODIFIER ICI
+        // ===============================================
+        window.songList = [
+                { 
+                title: "NC-00 ARABIC C", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20ARABIC%20C.mp3",
+                cover: "covers/0.jpg"
+            },
+            { 
+                title: "NC-00 FRENCH C", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20C.mp3",
+                cover: "covers/0.jpg"
+            },
+            { 
+                title: "NC-00 ENGLISH C", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20ENGLISH%20C.mp3",
+                cover: "covers/0.jpg"
+            },
+            
+                        { 
+                title: "NC-00 ENGLISH AF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20ENGLISH%20AF.mp3",
+                cover: "covers/0.jpg"
+            },
+            
+                        { 
+                title: "NC-00 FRENCH AF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20AF.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ARABIC AF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20ARABIC%20AF.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ENGLISH AF1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20ENGLISH%20AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 ARABIC AF1", 
+                file: "music/mathsmusic/NC-00 ARABIC AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20AF1.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF2", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20AF2.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF3", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20AF3.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-00 FRENCH AF4", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-00%20FRENCH%20AF4.mp3",
+                cover: "covers/0.jpg"
+            },
+                        { 
+                title: "NC-01 ARABIC OAF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-01%20ARABIC%20OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 FRENCH OAF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-01%20FRENCH%20OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 ENGLISH OAF", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-01%20ENGLISH%20OAF.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 FRENCH OAF1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-01%20FRENCH%20OAF1.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-01 ENGLISH OAF1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-01%20ENGLISH%20OAF1.mp3",
+                cover: "covers/1.jpg"
+            },
+                        { 
+                title: "NC-02 ARABIC GR", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-02%20ARABIC%20GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 FRENCH GR", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-02%20FRENCH%20GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 ENGLISH GR", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-02%20ENGLISH%20GR.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 FRENCH GR1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-02%20FRENCH%20GR1.mp3",
+                cover: "covers/2.jpg"
+            },
+                        { 
+                title: "NC-02 ENGLISH GR1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-02%20ENGLISH%20GR1.mp3",
+                cover: "covers/2.jpg"
+            },
+                         { 
+                title: "NC-03 ARABIC ARG", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ARABIC%20ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20FRENCH%20ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ENGLISH%20ARG.mp3",
+                cover: "covers/3.jpg"
+            },
+            
+                                     { 
+                title: "NC-03 ARABIC ARG1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ARABIC%20ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20FRENCH%20ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ENGLISH%20ARG1.mp3",
+                cover: "covers/3.jpg"
+            },
+            
+                                     { 
+                title: "NC-03 ARABIC ARG2", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ARABIC%20ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 FRENCH ARG2", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20FRENCH%20ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-03 ENGLISH ARG2", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-03%20ENGLISH%20ARG2.mp3",
+                cover: "covers/3.jpg"
+            },
+                         { 
+                title: "NC-04 ARABIC FTE", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20ARABIC%20FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 FRENCH FTE", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20FRENCH%20FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 ENGLISH FTE", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20ENGLISH%20FTE.mp3",
+                cover: "covers/4.jpg"
+            },
+                                     { 
+                title: "NC-04 ARABIC FTE1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20ARABIC%20FTE1.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 FRENCH FTE1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20FRENCH%20FTE1.mp3",
+                cover: "covers/4.jpg"
+            },
+                         { 
+                title: "NC-04 ENGLISH FTE1", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-04%20ENGLISH%20FTE1.mp3",
+                cover: "covers/4.jpg"
+            },
+{ 
+                title: "NC-05 ARABIC COLIN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-05%20ARABIC%20COLIN.mp3",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-05 FRENCH COLIN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-05%20FRENCH%20COLIN.mp3",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-05 ENGLISH COLIN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-05%20ENGLISH%20COLIN.mp3",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-05 TURKISH COLIN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-05%20TURKISH%20COLIN.mp3",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-05 HINDI COLIN", 
+                file: "",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-05 HINDI COLIN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-05%20HINDI%20COLIN.mp3",
+                cover: "covers/5.jpg"
+            },
+{ 
+                title: "NC-06 ARABIC RC", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-06%20ARABIC%20RC.mp3",
+                cover: "covers/6.jpg"
+            },
+{ 
+                title: "NC-06 FRENCH RC", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-06%20FRENCH%20RC.mp3",
+                cover: "covers/6.jpg"
+            },
+{ 
+                title: "NC-06 ENGLISH RC", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-06%20ENGLISH%20RC.mp3",
+                cover: "covers/6.jpg"
+            },
+{ 
+                title: "NC-06 HINDI RC", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-06%20HINDI%20RC.mp3",
+                cover: "covers/6.jpg"
+            },
+{ 
+                title: "NC-07 ARABIC ESD", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-07%20ARABIC%20ESD.mp3",
+                cover: "covers/7.jpg"
+            },
+{ 
+                title: "NC-07 FRENCH ESD", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-07%20FRENCH%20ESD.mp3",
+                cover: "covers/7.jpg"
+            },
+{ 
+                title: "NC-07 ENGLISH ESD", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-07%20ENGLISH%20ESD%20.mp3",
+                cover: "covers/7.jpg"
+            },
+{ 
+                title: "NC-08 ARABIC RN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-08%20ARABIC%20RN%20.mp3",
+                cover: "covers/8.jpg"
+            },
+{ 
+                title: "NC-08 FRENCH RN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-08%20FRENCH%20RN.mp3",
+                cover: "covers/8.jpg"
+            },
+{ 
+                title: "NC-08 ENGLISH RN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-08%20ENGLISH%20RN%20.mp3",
+                cover: "covers/8.jpg"
+            },
+{ 
+                title: "NC-09 ARABIC EDN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-09%20ARABIC%20EDN.mp3",
+                cover: "covers/9.jpg"
+            },
+{ 
+                title: "NC-09 FRENCH EDN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-09%20ENGLISH%20EDN.mp3",
+                cover: "covers/9.jpg"
+            },
+{ 
+                title: "NC-09 ENGLISH EDN", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-09%20ENGLISH%20EDN.mp3",
+                cover: "covers/9.jpg"
+            },
+{ 
+                title: "NC-10 ARABIC RESUME", 
+                file: "",
+                cover: "covers/10.jpg"
+            },
+{ 
+                title: "NC-10 FRENCH RESUME", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-10%20FRENCH%20RESUME.mp3",
+                cover: "covers/10.jpg"
+            },
+{ 
+                title: "NC-10 ENGLISH RESUME", 
+                file: "https://fshdjadljjhacefxfods.supabase.co/storage/v1/object/public/Mathsmusic/NC-10%20ENGLISH%20RESUME.mp3",
+                cover: "covers/10.jpg"
+            }
+
+            
+        ];
+        window.artistName = "KACHBOURI BOUALI";
+        window.projectName = "MATHSMUSIC";
+        window.platformName = "LOGICAMATHS الباك";
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
