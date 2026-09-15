@@ -1,0 +1,818 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=*, itemsep=0pt, parsep=0pt}
+
+\title{Exercices de géométrie dans l'espace – Niveau 2}
+\author{KACHBOURI BOUALI \\ Plateforme : LOGICAMATHS الباك}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ==================== EXERCICE 1 ====================
+\section*{Exercice 1}
+
+L'espace est muni d'un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(1,2,0)\), \(B(3,-2,2)\), \(C(-1,0,4)\) et \(G(1,0,2)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que \(\overrightarrow{AB} \wedge \overrightarrow{AC} = -12(\vec{i}+\vec{j}+\vec{k})\).
+        \item Soit \(P\) le plan qui passe par les points \(A,B\) et \(C\). Montrer qu'une équation cartésienne du plan \(P\) est \(x+y+z-3=0\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que \(GA = GB = GC = 2\sqrt{2}\).
+        \item En déduire que le point \(G\) est le centre du cercle \((\zeta)\) circonscrit au triangle \(ABC\).
+    \end{enumerate}
+
+    \item Soit \(S\) une sphère de rayon \(\sqrt{11}\) qui coupe le plan \(P\) suivant le cercle \((\zeta)\). On note \(I\) le centre de la sphère \(S\) et \(\Delta\) la droite perpendiculaire au plan \(P\) en \(G\).
+    \begin{enumerate}
+        \item Justifier que le point \(I\) appartient à la droite \(\Delta\).
+        \item Montrer que \(IG^2 = 3\).
+        \item Donner une représentation paramétrique de la droite \(\Delta\).
+        \item Montrer qu'il existe deux sphères de rayon \(\sqrt{11}\) qui coupent le plan \(P\) suivant le cercle \((\zeta)\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 2 ====================
+\section*{Exercice 2}
+
+L'espace est muni d'un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(1,3,1)\), \(B(-1,1,1)\) et \(C(1,2,0)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Calculer les composantes du vecteur \(\overrightarrow{AB} \wedge \overrightarrow{AC}\).
+        \item En déduire que les points \(A,B\) et \(C\) déterminent un plan \(P\) dont une équation cartésienne est \(x - y + z + 1 = 0\).
+        \item Vérifier que le point \(H\left(\frac{1}{3}, \frac{5}{3}, \frac{1}{3}\right)\) est le projeté orthogonal du point \(I(1,1,1)\) sur le plan \(P\).
+    \end{enumerate}
+
+    \item Soit \(S\) l'ensemble des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 2x - 2y - 2z - 1 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S\) est la sphère de centre \(I\) et de rayon \(R=2\).
+        \item Vérifier que les points \(A\) et \(B\) appartiennent à \(S\).
+        \item Montrer que le plan \(P\) coupe la sphère \(S\) suivant un cercle \(\mathcal{E}\) que l'on caractérisera.
+        \item Montrer que la droite \((AB)\) coupe le cercle \(\mathcal{E}\) en \(A\) et \(B\).
+    \end{enumerate}
+
+    \item On considère le plan \(Q: z-1=0\).
+    \begin{enumerate}
+        \item Montrer que \(P\) et \(Q\) sont sécants suivant la droite \((AB)\).
+        \item Soit le point \(E(1,1,3)\). Vérifier que \(E\) appartient à \(S\).
+        \item Soit \(M(x,y,z)\) un point de l'espace. Montrer que \(\overrightarrow{IE} \cdot \overrightarrow{IM} = 0\) si et seulement si \(M\) appartient à \(Q\).
+    \end{enumerate}
+
+    \item Déterminer l'ensemble des points \(M\) du plan \(P\) tels que le triangle \(IME\) soit rectangle et isocèle en \(I\).
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 3 ====================
+\section*{Exercice 3}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(1,-2,3)\), \(B(1,0,5)\) et \(C(3,-2,3)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Calculer les composantes du vecteur \(\overrightarrow{AB} \wedge \overrightarrow{AC}\).
+        \item Montrer que l'aire \(\mathcal{A}\) du triangle \(ABC\) est \(2\sqrt{2}\).
+        \item Montrer qu'une équation cartésienne du plan \(\mathcal{P}\) passant par les points \(A\), \(B\) et \(C\) est \(y - z + 5 = 0\).
+    \end{enumerate}
+
+    \item On considère dans l'espace le point \(D(1,2,3)\).
+    \begin{enumerate}
+        \item Calculer la distance du point \(D\) au plan \(\mathcal{P}\).
+        \item Déduire le volume \(v\) du tétraèdre \(ABCD\).
+    \end{enumerate}
+
+    \item Soit \(S\) l'ensemble des points \(M(x,y,z)\) de l'espace tel que
+    \[
+        x^2 + y^2 + z^2 - 4x - 6z + 8 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S\) est une sphère de centre \(K(2,0,3)\). Donner son rayon \(R\).
+        \item Montrer que le plan \(\mathcal{P}\) coupe la sphère \(S\) suivant le cercle \(\mathcal{E}\) de centre \(I(2,-1,4)\) et de rayon \(r = \sqrt{3}\).
+    \end{enumerate}
+
+    \item Pour tout réel \(m\), on considère le point \(D_m(1,m,5-m)\) et la sphère \(S_m\) de diamètre \([CD_m]\).
+    \begin{enumerate}
+        \item Montrer que pour tout réel \(m\), \(D_m\) appartient à la droite passant par \(B\) et perpendiculaire à \(\mathcal{P}\).
+        \item Calculer alors le produit scalaire \(\overrightarrow{BD_m} \cdot \overrightarrow{BC}\), pour tout réel \(m\).
+        \item En déduire que le point \(B\) appartient à \(S_m\).
+        \item Conclure que, pour tout réel \(m\), le plan \(\mathcal{P}\) coupe la sphère \(S_m\) suivant le cercle \(\mathcal{E}\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 4 ====================
+\section*{Exercice 4}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(-1,-1,-1)\), \(B(-2,-1,0)\), \(C(1,1,-5)\) et le vecteur \(\vec{N}\begin{pmatrix}1\\1\\1\end{pmatrix}\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Vérifier que \(\overrightarrow{AB} \wedge \overrightarrow{AC} = -2\overrightarrow{N}\). En déduire que \(A\), \(B\) et \(C\) ne sont pas alignés.
+        \item Soit \(P\) le plan passant par \(A\), \(B\) et \(C\). Montrer qu'une équation de \(P\) est \(x + y + z + 3 = 0\).
+        \item On considère les points \(E(1,0,2)\) et \(H(-1,-2,0)\). Vérifier que \(\overrightarrow{HE} = 2\overrightarrow{N}\). En déduire que \(H\) est le projeté orthogonal de \(E\) sur le plan \(P\).
+        \item Calculer le volume du tétraèdre \(EABC\).
+    \end{enumerate}
+
+    \item On considère dans l'espace, l'ensemble \(S\) des points \(M(x,y,z)\) tels que
+    \[
+        x^2 + y^2 + z^2 - 2x - 4z - 9 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S\) est la sphère de centre \(E\) et de rayon \(\sqrt{14}\).
+        \item Montrer que \(P\) coupe \(S\) suivant le cercle \((\zeta_1)\) du plan \(P\) de centre \(H\) et de rayon \(\sqrt{2}\).
+        \item Vérifier que \(A\) et \(B\) appartiennent à \((\zeta_1)\).
+    \end{enumerate}
+
+    \item On considère le plan \(Q: x - 5y + z - 3 = 0\).
+    \begin{enumerate}
+        \item Montrer que \(P\) et \(Q\) sont sécants suivant la droite \((AB)\).
+        \item Vérifier que \(E \in Q\).
+        \item En déduire que le plan \(Q\) coupe la sphère \(S\) suivant un cercle \((\zeta_2)\) dont on précisera le centre et le rayon.
+        \item Montrer que \((\zeta_1)\) et \((\zeta_2)\) se coupent en \(A\) et \(B\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 7 ====================
+\section*{Exercice 7}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(2,-2,2)\), \(B(2,0,0)\) et \(C(\frac{6}{5},0,\frac{2}{5})\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que \(ABC\) est un triangle rectangle en \(C\).
+        \item Montrer qu'une équation cartésienne du plan \((ABC)\) est \(x + 2y + 2z - 2 = 0\).
+    \end{enumerate}
+
+    \item Soit \(\Delta\) la droite perpendiculaire au plan \((ABC)\) en \(A\).
+    \begin{enumerate}
+        \item Déterminer un système d'équations paramétriques de la droite \(\Delta\).
+        \item On considère le plan \(P\) dont une équation cartésienne est \(4x + 8y - z - 8 = 0\). Montrer que la droite \(\Delta\) coupe le plan \(P\) au point \(I(3,0,4)\).
+        \item Soit \(S\) la sphère tangente au plan \((ABC)\) en \(A\) et dont le centre appartient au plan \(P\). Montrer que la sphère \(S\) a pour centre le point \(I\) puis calculer son rayon \(R\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que le triangle \(CIB\) est rectangle en \(C\).
+        \item Soit \(J\) le milieu du segment \([IB]\). Montrer que les points \(I, B, A\) et \(C\) appartiennent à la sphère \(S'\) de centre \(J\) et de rayon \(\frac{IB}{2}\).
+        \item Montrer que la sphère \(S'\) coupe le plan \((ABC)\) suivant le cercle de diamètre \([AB]\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 8 ====================
+\section*{Exercice 8}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(1,2,-1)\), \(B(2,0,-2)\) et \(C(-1,1,1)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer \(\overrightarrow{AB} \wedge \overrightarrow{AC}\) et déduire que les points \(A\), \(B\) et \(C\) ne sont pas alignés.
+        \item Soit \(P\) le plan déterminé par les points \(A\), \(B\) et \(C\). Montrer qu'une équation cartésienne du plan \(P\) est \(x + z = 0\).
+    \end{enumerate}
+
+    \item Soit \(\Delta\) la droite de système d'équations paramétriques:
+    \[
+        \Delta : \begin{cases}
+            x = \alpha + 1 \\
+            y = 2 \\
+            z = \alpha - 1
+        \end{cases}
+        \quad (\alpha \in \mathbb{R}).
+    \]
+    \begin{enumerate}
+        \item Vérifier que \(A\) est un point de \(\Delta\).
+        \item Montrer que la droite \(\Delta\) est perpendiculaire au plan \(P\).
+    \end{enumerate}
+
+    \item Soit \(\alpha\) un réel et \(I_\alpha(\alpha+1, 2, \alpha-1)\) un point de la droite \(\Delta\).
+    \begin{enumerate}
+        \item Montrer que \(d(I_\alpha, P) = \sqrt{2}|\alpha|\).
+        \item Soit \((S_\alpha)\) la sphère de centre \(I_\alpha\) et de rayon \(2\sqrt{2}\). Déterminer suivant les valeurs de \(\alpha\) la position relative de la sphère \((S_\alpha)\) et du plan \(P\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Pour quelles valeurs de \(\alpha\), le point \(B\) appartient à la sphère \((S_\alpha)\) ?
+        \item Pour les valeurs de \(\alpha\) trouvées dans la question 4) a), caractériser \(S_\alpha \cap P\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 9 ====================
+\section*{Exercice 9}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(0,-1,0)\), \(B(1,1,0)\) et \(C(0,0,1)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{AB} \wedge \overrightarrow{AC}\).
+        \item En déduire que les points \(A\), \(B\) et \(C\) définissent un plan \(P\).
+        \item Vérifier qu'une équation cartésienne du plan \(P\) est \(2x - y + z - 1 = 0\).
+    \end{enumerate}
+
+    \item On considère le plan \(Q: x + y - 2z + 1 = 0\). Montrer que les plans \(P\) et \(Q\) sont sécants et que leur intersection est la droite
+    \[
+        \Delta : \begin{cases}
+            x = \alpha \\
+            y = 5\alpha - 1 \\
+            z = 3\alpha
+        \end{cases}
+        \quad (\alpha \in \mathbb{R}).
+    \]
+
+    \item Soit \(S\) l'ensemble des points \(M(x,y,z)\) vérifiant \(x^2 + y^2 + z^2 + 2x - 2z + \frac{4}{3} = 0\).
+    \begin{enumerate}
+        \item Montrer que \(S\) est une sphère de centre le point \(I(-1,0,1)\). Déterminer son rayon.
+        \item Montrer que la sphère \(S\) est tangente à chacun des plans \(P\) et \(Q\).
+    \end{enumerate}
+
+    \item Soient \(J\) et \(K\) les points de contact respectifs de la sphère \(S\) avec les plans \(P\) et \(Q\).
+    \begin{enumerate}
+        \item Justifier que le plan \((IJK)\) est perpendiculaire à chacun des plans \(P\) et \(Q\).
+        \item Montrer qu'une équation cartésienne du plan \((IJK)\) est \(x + 5y + 3z - 2 = 0\).
+        \item Déterminer les coordonnées du point \(L\), intersection des plans \(P\), \(Q\) et \((IJK)\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 12 ====================
+\section*{Exercice 12}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(2,1,1)\), \(B(1,1,0)\), \(C(1,0,1)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que les points \(A\), \(B\) et \(C\) déterminent un plan que l'on notera \(P\).
+        \item Vérifier que \(x - y - z = 0\) est une équation cartésienne du plan \(P\).
+    \end{enumerate}
+
+    \item Soit le point \(D(2,0,0)\).
+    \begin{enumerate}
+        \item Montrer que les points \(A\), \(B\), \(C\) et \(D\) ne sont pas coplanaires.
+        \item Calculer le volume \(\mathcal{V}\) du tétraèdre \(ABCD\).
+    \end{enumerate}
+
+    \item Soit \(I\left(\frac{3}{2}, \frac{1}{2}, \frac{1}{2}\right)\). On désigne par \((S)\) la sphère de centre \(I\) et passant par \(D\).
+    \begin{enumerate}
+        \item Montrer que la sphère \((S)\) passe par les points \(A\) et \(B\).
+        \item En déduire que le plan \(P\) coupe la sphère \((S)\) suivant un cercle \((\mathcal{E})\).
+        \item Justifier que \((\mathcal{E})\) est circonscrit au triangle \(ABC\).
+    \end{enumerate}
+
+    \item Soit \(\Delta\) la droite passant par \(I\) et perpendiculaire au plan \(P\).
+    \begin{enumerate}
+        \item Donner un système d'équations paramétriques de la droite \(\Delta\).
+        \item Déterminer les coordonnées du point \(\Omega\) centre du cercle \((\mathcal{E})\).
+        \item Soit \(D'\) le symétrique de \(D\) par rapport à \(\Omega\). Montrer que le volume \(\mathcal{V}'\) du tétraèdre \(D'ABC\) est égal à \(\mathcal{V}\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 13 ====================
+\section*{Exercice 13}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(0,1,2)\), \(B(2,0,3)\), \(C(-1,0,0)\) et \(I(1,2,1)\) .
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Vérifier que les points \(A\), \(B\) et \(C\) ne sont pas alignés.
+        \item On désigne par \(P\) le plan \((ABC)\). Montrer qu'une équation cartésienne de \(P\) est \(x + y - z + 1 = 0\).
+    \end{enumerate}
+
+    \item Soit la sphère \((S)\) dont une équation cartésienne est
+    \[
+        x^2 + y^2 + z^2 - 2x - 4y - 2z + 3 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \((S)\) a pour centre le point \(I\) et déterminer son rayon.
+        \item Montrer que le plan \(P\) est tangent à \((S)\) au point \(A\).
+        \item Calculer le volume du tétraèdre \(IABC\).
+    \end{enumerate}
+
+    \item Soit \(H\) le milieu du segment \([IA]\) et \(Q\) le plan passant par \(H\) et parallèle à \(P\).
+    \begin{enumerate}
+        \item Montrer que le plan \(Q\) et la sphère \((S)\) sont sécants en un cercle \((\mathcal{C})\).
+        \item Déterminer le centre et le rayon du cercle \((\mathcal{C})\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 14 ====================
+\section*{Exercice 14}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(1,0,-1)\), \(B(1,3,5)\) et \(C(-7,2,2)\). Soit \(H(-1,4,3)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{HB} \wedge \overrightarrow{HC}\).
+        \item En déduire qu'une équation cartésienne du plan \((HBC)\) est \(x - 2y - 2z + 15 = 0\).
+        \item Montrer que le point \(H\) est le projeté orthogonal de \(A\) sur le plan \((HBC)\).
+    \end{enumerate}
+
+    \item On considère l'ensemble \(S\) des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 4y - 2z + 1 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S\) est une sphère et préciser son centre \(I\) et son rayon \(R\).
+        \item Vérifier que \(I\) est le milieu du segment \([AH]\).
+        \item Déterminer la position relative de la sphère \(S\) et du plan \((HBC)\).
+    \end{enumerate}
+
+    \item Soit \(J(0,0,1)\).
+    \begin{enumerate}
+        \item Vérifier que \(J\) appartient à \(S\).
+        \item Calculer la distance du point \(I\) à la droite \((AJ)\).
+        \item En déduire que la droite \((AJ)\) est tangente à \(S\).
+        \item Donner une représentation paramétrique de la droite \((AJ)\) et déterminer les coordonnées du point d'intersection de \((AJ)\) et du plan \((HBC)\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 18 ====================
+\section*{Exercice 18}
+
+Dans l'espace rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\), on donne les points \(A(-2,1,1)\), \(B(-1,-1,0)\), \(C(1,1,4)\), \(H(0,0,2)\) et la droite \(\Delta\) dont un système d'équations paramétriques est
+\[
+    \begin{cases}
+        x = \alpha \\
+        y = \alpha \\
+        z = -\alpha + 2
+    \end{cases}
+    \quad (\alpha \in \mathbb{R}).
+\]
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que les points \(A\), \(B\) et \(C\) définissent un plan \(P\).
+        \item Montrer qu'une équation de \(P\) est \(x + y - z + 2 = 0\).
+    \end{enumerate}
+
+    \item Soit le point \(E(2,2,0)\).
+    \begin{enumerate}
+        \item Vérifier que \(E\) n'appartient pas à \(P\).
+        \item Calculer le volume du tétraèdre \(EABC\).
+    \end{enumerate}
+
+    \item Montrer que la droite \(\Delta\) est perpendiculaire au plan \(P\) en un point que l'on précisera.
+
+    \item Soit \(\alpha \neq 0\) et \(M(\alpha,\alpha,-\alpha+2)\) un point de \(\Delta\).
+    \begin{enumerate}
+        \item Calculer en fonction de \(\alpha\) le volume du tétraèdre \(MABC\).
+        \item En déduire les coordonnées des points \(M\) pour lesquels le volume du tétraèdre \(MABC\) est égal au double du volume du tétraèdre \(EABC\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 19 ====================
+\section*{Exercice 19}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\).
+
+\begin{enumerate}
+    \item Soit le plan \(Q\) d'équation \(x + y + \sqrt{2}z - 2 = 0\). Montrer que le plan \(Q\) coupe les axes \((Ox), (Oy)\) et \((Oz)\) respectivement aux points \(A(2,0,0)\), \(B(0,2,0)\) et \(C(0,0,\sqrt{2})\).
+
+    \item Soit la sphère \((S)\) d'équation \(x^2 + y^2 + z^2 = 1\). Montrer que le plan \(Q\) et la sphère \((S)\) sont tangents et déterminer leur point de contact.
+
+    \item Soit \(a\) un réel strictement positif. On considère les points \(M(a,0,0)\) et \(N(0,\frac{4}{a},0)\). Déterminer en fonction du réel \(a\), les composantes du vecteur \(\overrightarrow{CM} \wedge \overrightarrow{CN}\).
+
+    \item
+    \begin{enumerate}
+        \item Montrer qu'une équation du plan \((CMN)\) est \(4x + a^2 y + 2a\sqrt{2}z - 4a = 0\).
+        \item Soit \(d\) la distance du point \(O\) au plan \((CMN)\). Montrer que
+        \[
+            d = 1 - \frac{(a-2)^2}{a^2 + 4}.
+        \]
+        \item En déduire la valeur du réel \(a\) pour laquelle la distance \(d\) est maximale.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que pour tout réel \(a > 0\), le volume du tétraèdre \(OCMN\) est égal à \(\frac{2\sqrt{2}}{3}\).
+        \item En déduire que pour tout réel \(a > 0\), l'aire du triangle \(CMN\) est supérieure ou égale à \(2\sqrt{2}\).
+        \item Identifier les points \(M\) et \(N\) pour lesquels l'aire du triangle \(CMN\) est égale à \(2\sqrt{2}\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 20 ====================
+\section*{Exercice 20}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(2,2,1)\), \(B(0,-2,4)\) et \(C(2,0,-4)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{OB} \wedge \overrightarrow{BC}\).
+        \item On note \(P\) le plan \((OBC)\). En remarquant que \(\overrightarrow{OB} \wedge \overrightarrow{BC} = 4\overrightarrow{OA}\), justifier que la droite \((OA)\) est perpendiculaire au plan \(P\) en \(O\).
+        \item Montrer que la distance du point \(O\) à la droite \((BC)\) est égale à \(\sqrt{2}\).
+    \end{enumerate}
+
+    \item Soit \((S)\) l'ensemble des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 4x - 4y - 2z - 2 = 0.
+    \]
+    Montrer que \((S)\) est la sphère de centre \(A\) et de rayon \(\sqrt{11}\).
+
+    \item
+    \begin{enumerate}
+        \item Calculer la distance \(OA\).
+        \item En déduire que le plan \(P\) coupe la sphère \((S)\) suivant un cercle \((\mathcal{C})\) de centre \(O\) et de rayon \(\sqrt{2}\).
+        \item Montrer que la droite \((BC)\) est tangente au cercle \((\mathcal{C})\).
+    \end{enumerate}
+
+    \item On considère le point \(H(1,-1,0)\).
+    \begin{enumerate}
+        \item Montrer que \(H\) est le point de contact de la droite \((BC)\) et du cercle \((\mathcal{C})\).
+        \item Déterminer une équation cartésienne du plan \(Q\) tangent à \((S)\) en \(H\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 24 ====================
+\section*{Exercice 24}
+
+L'espace est muni d'un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(1,0,0)\), \(B(0,0,1)\) et \(C(1,-1,1)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer \(\overrightarrow{AB} \wedge \overrightarrow{AC}\). En déduire que les points \(A\), \(B\) et \(C\) déterminent un plan \(\mathcal{P}\).
+        \item Montrer qu'une équation cartésienne de \(\mathcal{P}\) est \(x + y + z - 1 = 0\).
+    \end{enumerate}
+
+    \item Soit \(S\) l'ensemble des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 2x - 2z + 1 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S\) est une sphère dont on précisera le centre \(I\) et le rayon \(r\).
+        \item Montrer que \(S \cap \mathcal{P}\) est le cercle circonscrit au triangle \(ABC\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Calculer le volume du tétraèdre \(IABC\).
+        \item Soit \(\alpha\) un réel et soit \(M\) un point de l'espace de coordonnées \((\alpha, 0, 2-\alpha)\). Montrer que, lorsque \(\alpha\) décrit l'ensemble \(\mathbb{R}\), le volume du tétraèdre \(MABC\) reste constant.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 25 ====================
+\section*{Exercice 25}
+
+L'espace est rapporté à un repère orthonormé direct \((A,\vec{i},\vec{j},\vec{k})\). On considère le parallélépipède \(ABCDEFGH\) tel que
+\[
+    \overrightarrow{AB} = 2\vec{i}, \quad \overrightarrow{AD} = 4\vec{j}, \quad \overrightarrow{AE} = 3\vec{k}.
+\]
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Vérifier que \(\overrightarrow{AG} = 2\vec{i} + 4\vec{j} + 3\vec{k}\).
+        \item Déterminer les composantes de chacun des vecteurs \(\overrightarrow{EB}\), \(\overrightarrow{EG}\) et \(\overrightarrow{EB} \wedge \overrightarrow{EG}\).
+        \item Déterminer une équation cartésienne du plan \((EBG)\).
+    \end{enumerate}
+
+    \item Soit \(\alpha\) un réel différent de \(1\) et \(M\) le point de coordonnées \((2\alpha, 4\alpha, 3\alpha)\).
+    \begin{enumerate}
+        \item Vérifier que \(M\) décrit la droite \((AG)\) privée du point \(G\).
+        \item Montrer que \(M\) n'appartient pas au plan \((EBG)\).
+    \end{enumerate}
+
+    \item Soit \(\nu\) le volume du tétraèdre \(MEBG\).
+    \begin{enumerate}
+        \item Exprimer \(\nu\) en fonction de \(\alpha\).
+        \item Calculer le volume du tétraèdre \(AEBG\).
+        \item Pour quelles valeurs de \(\alpha\), \(\nu\) est-il égal au volume du parallélépipède \(ABCDEFGH\) ?
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 26 ====================
+\section*{Exercice 26}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(2,-2,1)\), \(B(1,1,-1)\) et \(I(1,-1,1)\) et le vecteur \(\vec{u}=2\(\vec{i}+\vec{j}+\vec{k}\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Donner les composantes des vecteurs \(\overrightarrow{IA}\) et \(\overrightarrow{IB}\).
+        \item Vérifier que \(\overrightarrow{IA} \wedge \overrightarrow{IB} = \vec{u}\).
+        \item Déduire l'aire du triangle \(IAB\).
+    \end{enumerate}
+
+    \item On désigne par :
+    \begin{itemize}
+        \item \(P\) le plan qui passe par le point \(A\) et de vecteur normal \(\overrightarrow{IA}\);
+        \item \(Q\) le plan qui passe par le point \(B\) et de vecteur normal \(\overrightarrow{IB}\);
+        \item \(S\) la sphère tangente au plan \(Q\) en \(B\) et qui coupe le plan \(P\) suivant le cercle \((\zeta)\) de centre \(A\) et de rayon \(r\).
+    \end{itemize}
+    \begin{enumerate}
+        \item Montrer que la sphère \(S\) est de centre le point \(I\).
+        \item Vérifier que le rayon \(R\) de la sphère \(S\) est égal à \(2\sqrt{2}\).
+        \item Montrer que \(r = \sqrt{6}\).
+        \item Donner une équation cartésienne de la sphère \(S\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que les plans \(P\) et \(Q\) sont sécants suivant une droite \(\Delta\) de vecteur directeur \(\vec{u}\).
+        \item Montrer que le point \(H(4,0,-2)\) appartient à la droite \(\Delta\).
+        \item Donner alors une représentation paramétrique de la droite \(\Delta\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 29 ====================
+\section*{Exercice 29}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(0,0,1)\), \(B(1,0,-1)\) et \(C(1,1,1)\).
+
+\begin{enumerate}
+    \item Montrer que les points \(A\), \(B\) et \(C\) déterminent un plan \(P\).
+
+    \item Soit le vecteur \(\vec{n}\begin{pmatrix}a\\b\\c\end{pmatrix}\) où \(a,b,c\) sont des réels tel que \(c \neq 0\).
+    \begin{enumerate}
+        \item Montrer que \(\vec{n}\) est un vecteur normal à \(P\) si et seulement si \(\begin{cases} a = 2c \\ b = -2c \end{cases}\).
+        \item Montrer qu'une équation de \(P\) est \(2x - 2y + z - 1 = 0\).
+        \item Vérifier que \(O\) n'appartient pas à \(P\).
+    \end{enumerate}
+
+    \item Soient \(I\) le milieu du segment \([OB]\) et \(G\) le centre de gravité du triangle \(OAC\).
+    \begin{enumerate}
+        \item Déterminer les coordonnées des points \(I\) et \(G\).
+        \item Montrer qu'une représentation paramétrique de la droite \((IG)\) est
+        \[
+            \begin{cases}
+                x = \frac{1}{2} - \alpha \\
+                y = 2\alpha \\
+                z = -\frac{1}{2} + 7\alpha
+            \end{cases}
+            \quad (\alpha \in \mathbb{R}).
+        \]
+        \item Montrer que la droite \((IG)\) coupe le plan \(P\) en un point \(D\) dont on déterminera les coordonnées.
+        \item Montrer que \(ABCD\) est un parallélogramme.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 32 ====================
+\section*{Exercice 32}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(4,0,0)\), \(B(0,4,0)\), \(C(0,0,4)\) et \(O(0,0,0)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{AB} \wedge \overrightarrow{AC}\).
+        \item Déduire que les points \(A\), \(B\) et \(C\) déterminent un plan \(P\) dont une équation cartésienne est \(x + y + z - 4 = 0\).
+        \item Montrer que l'aire du triangle \(ABC\) est égale à \(8\sqrt{3}\).
+    \end{enumerate}
+
+    \item Soit le point \(G\left(\frac{4}{3}, \frac{4}{3}, \frac{4}{3}\right)\).
+    \begin{enumerate}
+        \item Montrer que le point \(G\) est le centre de gravité du triangle \(ABC\).
+        \item Montrer que \([OG]\) est la hauteur issue de \(O\) du tétraèdre \(OABC\).
+    \end{enumerate}
+
+    \item On donne les points \(I\), \(J\) et \(K\) milieux respectifs des segments \([AC]\), \([AB]\) et \([BC]\).
+    \begin{enumerate}
+        \item Justifier que \(\overrightarrow{KI} = \frac{1}{2}\overrightarrow{BA}\), \(\overrightarrow{KJ} = \frac{1}{2}\overrightarrow{CA}\) et que
+        \[
+            \overrightarrow{KI} \wedge \overrightarrow{KJ} = \frac{1}{4}\overrightarrow{AB} \wedge \overrightarrow{AC}.
+        \]
+        \item En déduire l'aire du triangle \(IJK\).
+    \end{enumerate}
+
+    \item On désigne respectivement par \(V\) et \(V'\) les volumes des tétraèdres \(OABC\) et \(OIJK\). Montrer que \(V' = \frac{1}{4}V\).
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 34 ====================
+\section*{Exercice 34}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(-1,1,0)\), \(B(1,0,1)\), \(C(0,2,-1)\) et \(D(-1,3,2)\).
+
+\begin{enumerate}
+    \item Montrer que le triangle \(ABC\) est rectangle en \(A\).
+
+    \item Montrer que le vecteur \(\overrightarrow{AD}\) est normal au plan \((ABC)\).
+
+    \item Calculer le volume \(V\) du tétraèdre \(DABC\).
+
+    \item Soit \(I\), \(J\) et \(K\) les milieux respectifs de \([DA]\), \([DB]\) et \([DC]\). On considère le plan \(Q\) passant par \(I\) et parallèle au plan \((ABC)\).
+    \begin{enumerate}
+        \item Donner une équation cartésienne du plan \(Q\).
+        \item Vérifier que \(J\) et \(K\) appartiennent à \(Q\).
+        \item On désigne par \(V'\) le volume du tétraèdre \(DIJK\). Montrer que \(V = 8V'\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 38 ====================
+\section*{Exercice 38}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère l'ensemble \((S)\) des points \( \M(x,y,z)\) tels que 
+\[
+    x^2 + y^2 + z^2 - 2x + 4y + 4z + 5 = 0
+\]
+et le plan \(P\) d'équation
+\[
+    x - 2y + 2z + 1 = 0.
+\]
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que \(S\) est la sphère de centre \(\Omega(1,-2,-2)\) et de rayon \(R = 2\).
+        \item Montrer que l'intersection de \(S\) et \(P\) est un cercle \(\mathcal{C}\) de centre \(K(\frac{7}{9},-\frac{14}{9},-\frac{22}{9})\) et dont on déterminera le rayon \(r\).
+    \end{enumerate}
+
+    \item Vérifier qu'une représentation paramétrique de la droite \((K\Omega)\) est
+    \[
+        \begin{cases}
+            x = 1 + t \\
+            y = -2 - 2t \\
+            z = -2 + 2t
+        \end{cases}
+        \quad (t \in \mathbb{R}).
+    \]
+
+    \item Soit \(I(\alpha,\beta,\gamma)\) un point de la sphère \(S\) et \(Q\) le plan tangent en \(I\) à \(S\).
+    \begin{enumerate}
+        \item Montrer qu'une équation du plan \(Q\) est
+        \[
+            (\alpha-1)x + (\beta+2)y + (\gamma+2)z - \alpha + 2\beta + 2\gamma + 5 = 0.
+        \]
+        \item Vérifier que \(N(-1,2,-6)\) est un point de \((K\Omega)\).
+        \item Montrer alors que tous les plans \(Q\) tangents à \(S\) en un point de \(\mathcal{C}\) passent par \(N\).
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 40 ====================
+\section*{Exercice 40}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On considère les points \(A(3,0,0)\), \(C(0,3,0)\), \(G(0,0,3)\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Justifier que \(E\) a pour coordonnées \((3,3,3)\) et donner celles de \(D\).
+        \item Déterminer les coordonnées du point \(\Omega\) milieu de \([CD]\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{AE} \wedge \overrightarrow{AG}\).
+        \item Calculer le volume du tétraèdre \(OAEG\).
+    \end{enumerate}
+
+    \item On désigne par \(P\) le plan passant par les points \(A\), \(E\) et \(G\).
+    \begin{enumerate}
+        \item Montrer que la droite \((CD)\) est perpendiculaire au plan \(P\).
+        \item Montrer qu'une équation cartésienne du plan \(P\) est \(x - y + z - 3 = 0\).
+    \end{enumerate}
+
+    \item Soit \((S)\) l'ensemble des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 3x - 3y - 3z + 6 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \((S)\) est une sphère dont on précisera le centre et le rayon.
+        \item Montrer que \((S)\) et \(P\) sont tangents en un point \(H\) dont on déterminera les coordonnées.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 47 ====================
+\section*{Exercice 47}
+\( OABCDEFG \) est un cube d'arête 1.
+L'espace est rapporté au repère orthonormé direct \((O,\overrightarrow{OA},\overrightarrow{OC},\overrightarrow{OD})\).
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur \(\overrightarrow{AC} \wedge \overrightarrow{AD}\).
+        \item En déduire qu'une équation cartésienne du plan \((ACD)\) est \(x + y + z - 1 = 0\).
+    \end{enumerate}
+
+    \item Soit \(\Delta\) la droite passant par \(O\) et perpendiculaire au plan \((ACD)\).
+    \begin{enumerate}
+        \item Donner une représentation paramétrique de la droite \(\Delta\).
+        \item Déterminer les coordonnées du point \(H\), intersection de \(\Delta\) et du plan \((ACD)\).
+    \end{enumerate}
+
+    \item Pour tout réel \(m\), on désigne par \(S_m\) l'ensemble des points \(M(x,y,z)\) de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 2mx - 2my - 2mz - 1 + 3m^2 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que pour tout réel \(m\), \(S_m\) est une sphère dont on précisera le centre \(I_m\) et le rayon \(r\).
+        \item Déterminer les valeurs de \(m\) pour lesquelles \(S_m\) passe par le point \(A\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Vérifier que les centres des sphères \(S_0\) et \(S_\frac{2}{3}\) sont deux points de la droite \(\Delta\).
+        \item Justifier que le plan \((ACD)\) coupe les deux sphères \(S_0\) et \(S_\frac{2}{3}\) suivant un même cercle qu'on précisera.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 50 ====================
+\section*{Exercice 50}
+
+L'espace est rapporté à un repère orthonormé direct \((O,\vec{i},\vec{j},\vec{k})\). On donne les points \(A(3,-1,1)\), \(B(2,1,-1)\) et \(C(0,-1,1)\).
+
+\begin{enumerate}
+    \item Soit \(S\) la sphère de centre \(A\) et passant par \(C\).
+    \begin{enumerate}
+        \item Montrer que le rayon de \(S\) est égal à \(3\).
+        \item Montrer qu'une équation cartésienne de \(S\) est
+        \[
+            x^2 + y^2 + z^2 - 6x + 2y - 2z + 2 = 0.
+        \]
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Vérifier que \(B\) appartient à \(S\).
+        \item Soit \(P\) le plan tangent à \(S\) en \(B\). Montrer qu'une équation cartésienne de \(P\) est \(x - 2y + 2z + 2 = 0\).
+    \end{enumerate}
+
+    \item Soit \(S'\) l'ensemble des points \(M(x,y,z)\) de l'espace vérifiant
+    \[
+        x^2 + y^2 + z^2 + 2y - 2z - 2 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que \(S'\) est la sphère de centre \(C\) et de rayon \(2\).
+        \item Montrer que \(P\) et \(S'\) sont tangents.
+        \item Justifier que \(H\left(-\frac{2}{3}, \frac{1}{3}, -\frac{1}{3}\right)\) est le point de contact de \(P\) et \(S'\).
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Montrer que \(M(x,y,z) \in S \cap S'\) si et seulement si
+        \[
+            \begin{cases}
+                x^2 + y^2 + z^2 + 2y - 2z - 2 = 0 \\
+                3x - 2 = 0
+            \end{cases}
+        \]
+        \item On considère le plan \(Q: 3x - 2 = 0\). Montrer que la droite \((AC)\) est perpendiculaire à \(Q\) au point \(\Omega\left(\frac{2}{3}, -1, 1\right)\).
+        \item Montrer que \(Q\) coupe \(S'\) suivant le cercle \(\Gamma\) de centre \(\Omega\) et de rayon \(r = \frac{4}{3}\sqrt{2}\).
+        \item Déterminer alors \(S \cap S'\).
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

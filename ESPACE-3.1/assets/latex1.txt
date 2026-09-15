@@ -1,0 +1,89 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=*, itemsep=0pt, parsep=0pt}
+
+\title{Exercices de géométrie dans l'espace – Niveau 1}
+\author{KACHBOURI BOUALI \\ Plateforme : LOGICAMATHS الباك}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ==================== EXERCICE 21 ====================
+\section*{Exercice 21}
+
+L'espace est rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$.
+
+\begin{enumerate}
+    \item Soit $P$ et $Q$ les plans d'équations respectives
+    \[
+        x + y - z - 5 = 0 \quad \text{et} \quad x + y - z + 7 = 0.
+    \]
+    Montrer que les plans $P$ et $Q$ sont strictement parallèles.
+
+    \item Soit $S$ l'ensemble des points $M(x,y,z)$ de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 2x - 4y - 2z + 1 = 0.
+    \]
+    \begin{enumerate}
+        \item Justifier que $S$ est la sphère de centre $I(1,2,1)$ et de rayon $R = \sqrt{5}$.
+        \item Montrer que $P \cap S$ est un cercle de centre $J(2,3,0)$ dont on déterminera le rayon.
+        \item Déterminer $Q \cap S$.
+    \end{enumerate}
+
+    \item On donne les points $A(0,0,1)$, $B(0,1,2)$ et $C(2,2,5)$.
+    \begin{enumerate}
+        \item Déterminer les composantes du vecteur $\overrightarrow{AB} \wedge \overrightarrow{AC}$.
+        \item Montrer que pour tout point $M(x,y,z)$ de l'espace,
+        \[
+            (\overrightarrow{AB} \wedge \overrightarrow{AC}) \cdot \overrightarrow{AM} = 2(x + y - z + 1).
+        \]
+    \end{enumerate}
+
+    \item Déterminer l'ensemble des points $M$ de la sphère $S$ pour lesquels $ABCM$ est un tétraèdre de volume égal à $2$.
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 52 ====================
+\section*{Exercice 52}
+
+Dans l'espace rapporté à un repère orthonormé $(O,\vec{i},\vec{j},\vec{k})$, on donne les points
+$A(1,1,-2)$, $B(1,2,-2)$ et $C(0,1,1)$.
+
+\begin{enumerate}
+    \item Montrer que les points $A$, $B$ et $C$ définissent un plan $(P)$.
+
+    \item Soit le vecteur $\vec{n} = 3\vec{i} + \vec{k}$.
+    \begin{enumerate}
+        \item Calculer $\vec{n} \cdot \overrightarrow{AB}$ et $\vec{n} \cdot \overrightarrow{AC}$.
+        \item En déduire qu'une équation cartésienne du plan $(P)$ est
+        \[
+            3x + z - 1 = 0.
+        \]
+    \end{enumerate}
+
+    \item Soit $(Q)$ le plan perpendiculaire à la droite $(AC)$ et passant par le point $A$.
+    \begin{enumerate}
+        \item Donner une équation cartésienne du plan $(Q)$.
+        \item Montrer que les plans $(P)$ et $(Q)$ sont perpendiculaires suivant la droite $(AB)$.
+    \end{enumerate}
+
+    \item Soit $m$ un paramètre réel et $(S_m)$ l'ensemble des points $M(x,y,z)$ tels que
+    \[
+        x^2 + y^2 + z^2 - 2x - 2my + 4z + 4 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que, pour tout réel $m$, l'ensemble $(S_m)$ est une sphère dont on précisera les coordonnées du centre $I_m$ et le rayon $R_m$.
+        \item Montrer que l'ensemble des points $I_m$, lorsque $m$ varie sur l'ensemble des réels, est la droite $(AB)$.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

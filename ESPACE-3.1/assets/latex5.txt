@@ -1,0 +1,364 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin=*, itemsep=0pt, parsep=0pt}
+
+\title{Problèmes de géométrie dans l'espace – Niveau 5}
+\author{KACHBOURI BOUALI \\ Plateforme : LOGICAMATHS الباك}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ==================== Problème 1 ====================
+\section*{Problème 1}
+
+L'espace est muni d'un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$. On donne les points
+$A(1,1,3)$, $B(-3,1,1)$ et $C(3,-2,1)$.
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Calculer les composantes du vecteur $\overrightarrow{AB} \wedge \overrightarrow{AC}$. En déduire que les points $A$, $B$ et $C$ déterminent un plan $P$ et calculer l'aire du triangle $ABC$.
+        \item Montrer qu'une équation cartésienne de $P$ est $x+2y-2z+3=0$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Vérifier que le point $D(3,5,-1)$ n'appartient pas au plan $P$. Calculer le volume du tétraèdre $ABCD$. En déduire la distance du point $D$ au plan $P$.
+        \item Soit $Q$ le plan passant par $D$ et parallèle à $P$. Montrer qu'une équation cartésienne de $Q$ est $x+2y-2z-15=0$.
+    \end{enumerate}
+
+    \item Soit $(S)$ l'ensemble des points $M(x,y,z)$ de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 4x - 6y - 2z + 5 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que $(S)$ est la sphère de centre $I(2,3,1)$ et de rayon $R=3$. Vérifier que $I$ est le milieu du segment $[AD]$.
+        \item Montrer que $(S)$ est tangente au plan $P$ en $A$ et au plan $Q$ en $D$.
+    \end{enumerate}
+
+    \item Soit $t \in ]-1,+\infty[$, on considère le point $J(2+t,\,3+2t,\,1-2t)$.
+    \begin{enumerate}
+        \item Montrer que les points $A$, $D$ et $J$ sont alignés.
+        \item Vérifier que $d(J,P)=3t+3$ et $d(J,Q)=|3t-3|$.
+    \end{enumerate}
+
+    \item Soit $(\mathcal{S}_t)$ la sphère de centre $J$ et tangente au plan $P$. 
+\begin{enumerate}
+\item Étudier suivant les valeurs de $t$ , la position relative de la sphère $\mathcal{S}_t$ et du plan $Q$.
+\item Soit $t \in ]1,+\infty[$,
+
+\begin{enumerate}
+\item Montrer que $(\mathcal{S}_t)$ et $Q$ se coupent suivant le cercle de rayon $r=6\sqrt{t}$ et de centre $D$.
+\item Donner une représentation paramétrique de la droite $(ID)$.
+\item Montrer que la droite $(ID)$ coupe la sphère $\mathcal{S}_t$ en $A$ et un autre point $E$ dont on donnera les coordonnées en fonction de $t$.
+\item Déterminer la valeur de $t$ pour que le volume du tétraèdre $ABCD$ soit égale au volume du cone de sommet $E$ , de centre $D$ et de rayon $r$.
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\vspace{1.5cm}
+\newpage
+
+% ==================== Problème 2====================
+\section*{Problème 2}
+
+L'espace est rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$.
+
+On considère les points $A(-2,-1,0)$, $B(1,3,1)$, $C(0,1,1)$ et $I(1,0,-2)$.
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item 
+\begin{enumerate}
+\item Déterminer les composantes du vecteur $\overrightarrow{AB} \wedge \overrightarrow{AC}$.
+\item En déduire que les points $A$, $B$ et $C$ déterminent un plan $P$.
+\item Calculer l'aire du triangle $ABC$.
+\end{enumerate}
+
+        \item Montrer qu'une équation cartésienne de $P$ est $2x - y - 2z + 3 = 0$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Vérifier que le point $I$ n'appartient pas au plan $P$.
+\item Calculer la distance de $I$ à $P$.
+        \item En déduire le volume $V$ du tétraèdre $ABCI$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+\item Déterminer les coordonnées du point $H$ pour que $AHBC$ soit un parallèlogramme. 
+\item Calculet l'aire du parallèlogramme $AHBC$.
+\item Calculer le volume de la pyramide $IACBH$.
+        \item Déterminer une équation de la sphère $(S)$ de centre $I$ et tangente à $P$.
+        \item Justifier que le point $H(-1,1,0)$ est le point de contact de $(S)$ et $P$.
+        \item Déterminer une représentation paramétrique de la droite $(IH)$.
+\item Montrer que la droite $(IH)$ coupe la sphère $(S)$ en $H$ et un autre point $E$ dont on déterminera les coordonnées.
+    \end{enumerate}
+
+    \item Soit $\zeta$ le cercle du plan $P$ de centre $H$ et tangent à la droite $(AC)$ en un point $D$.
+    \begin{enumerate}
+        \item Montrer que le cercle $\zeta$ est de rayon $r=1$.
+\item Montrer que la droite $(IH)$ est l'axe du cercle $\zeta$.
+\item Déterminer les coordonnées du point $D$.
+\item Calculer la distance $ID$.
+        \item Montrer qu'il existe un point $M$ de la droite $(IH)$, distinct de $I$, tel que la distance $d(M,P)$ de $M$ à $P$ est égale à $3$.
+        \item En déduire que les deux sphères de centres respectifs $M$ et $I$ et de rayon $R=\sqrt{10}$ coupent $P$ suivant le cercle $\zeta$.
+\item Montrer que $H$ est le milieu du segment $[IM]$.
+    \end{enumerate}
+\item 
+\begin{enumerate}
+\item Montrer que $P$ est le plan médiateur du segment $[IM]$.
+\item En déduire que le triangle $IMD$ est isocèle de sommet principal $D$.
+\item Déterminer les coordonnées du point $G$ centre de gravité du triangle $IMD$ .
+\item Montrer que les points $D$, $G$ et $H$ sont alignés.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Montrer que le point $E$ et la droite $(IG)$ déterminent un plan $Q$.
+\item Déterminer une équation cartésienne du plan $Q$.
+\item Montrer que les plans $P$ et $Q$ sont perpendiculaires.
+\item Déterminer un système d'équations paramétriques de la droite $\Delta = P\cap Q$.
+\item Vérifier que $\Delta =(DH)$.
+
+\end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+\newpage
+
+% ==================== Problème 3====================
+\section*{Problème 3}
+
+L'espace est rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$. On considère les points
+$A(1,0,0)$, $B(1,2,-1)$, $C(-1,2,0)$ et $I(0,1,-3)$.
+
+\begin{enumerate}
+    \item
+
+    \begin{enumerate}
+          \item Vérifier que $ABC$ est un triangle isocèle de sommet principale $B$.
+          \item Calculer le produit scalaire $\overrightarrow{BA} \cdot \overrightarrow{BC} $.
+           \item En déduire une valeur approchée de l'angle $\angle{ABC} $.
+
+    \end{enumerate}
+
+    \item 
+
+    \begin{enumerate}
+
+        \item Déterminer les composantes du vecteur $\overrightarrow{AB} \wedge \overrightarrow{AC}$.
+        \item En déduire que les points $A$, $B$ et $C$ déterminent un plan $P$ dont une équation cartésienne est
+        \[
+            x + y + 2z - 1 = 0
+        \]
+        \item Montrer que $ABCI$ est un tétraèdre et calculer son volume.
+
+    \end{enumerate}
+
+    \item Soit $S$ la sphère de centre $I$ et passant par $A$.
+
+    \begin{enumerate}
+
+        \item Calculer la distance $IA$.
+        \item Montrer que $S$ passe par le point $C$.
+        \item Donner une équation cartésienne de la sphère $S$.
+        \item Montrer que le point $B$ est le projeté orthogonal du point $I$ sur le plan $P$.
+        \item Montrer que l'intersection du plan $P$ et de la sphère $S$ est le cercle $(\mathcal{C})$ de centre $B$ et de rayon $\sqrt{5}$.
+        \item Vérifier que la droite $(IB)$ est l'axe du cercle $( \mathcal{C})$.
+        \item Donner une représentation paramétrique de la droite $(IB)$.
+        \item Déterminer les coordonnées du point $I'$ de la droite $(IB)$ distinct de $I$ tel que les tétraèdres $ABCI$ et $ABCI'$ ont le même volume.
+
+    \end{enumerate}
+
+    \item Soit $S'$ la sphère dont une équation cartésienne est :
+\[
+x^2+y^2+z^2-4x-6y-2z+3=0
+\]
+    \begin{enumerate}
+
+         \item Montrer que $S'$ est la sphère de centre $I'$ et de rayon $\sqrt{11}$.
+         \item Montrer que $S\cap P=(\mathcal{C})$.
+         \item Montrer que $S \cap S'= ( \mathcal{C} ) $.
+
+     \end{enumerate}
+
+         \item $\alpha$ étant un réel, on considère l'ensemble $S_\alpha$ des points $M(x,y,z)$ tels que
+    \[
+        x^2 + y^2 + z^2 - 2y - 2\alpha z - 1 = 0.
+    \]
+    \begin{enumerate}
+        \item Montrer que $S_\alpha$ est la sphère de centre $I_\alpha(0,1,\alpha)$ et de rayon $R_\alpha = \sqrt{2+\alpha^2}$.
+        \item Déterminer l'ensemble des points $I_\alpha$ lorsque $\alpha $ varie sur l'ensemble des réels.
+        \item Démontrer que :
+        \[
+R_\alpha  \text{est minimal} \quad \text{ si et seulement si} \quad \alpha = 0.
+        \]
+        \item Montrer que la sphère $S_\alpha$ passe par les points $A$ et $C$.
+        \item En déduire que pour tout réel $\alpha$, le plan $P$ coupe la sphère $S_\alpha$ selon un cercle $(\mathcal{C}_\alpha)$.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Soit $r_\alpha$ le rayon du cercle $(\mathcal{C}_\alpha)$. Montrer que
+        \[
+            r_\alpha = \sqrt{5} \quad \text{si et seulement si} \quad \alpha = 3 \text{ ou } \alpha = -3.
+        \]
+        \item Justifier que les centres des cercles $(\mathcal{C}_{-3})$ et $(\mathcal{C}_3)$ sont respectivement le point $B$ et un point $B'$ dont on déterminera les coordonnées.
+        \item Vérifier que $ABCB'$ est un losange et calculer son aire.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+\newpage
+
+% ==================== Problème 4====================
+\section*{Problème 4}
+
+L'espace est rapporté à un repère orthonormé direct $(O,\vec{i},\vec{j},\vec{k})$. On considère les points
+$A(2,2,\sqrt{2})$, $B(1,3,0)$ et $C(3,1,0)$.
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Calculer les composantes du vecteur $\overrightarrow{AB} \wedge \overrightarrow{AC}$.
+        \item En déduire que les points $A$, $B$ et $C$ déterminent le plan $P$ d'équation
+        \[
+            x + y - 4 = 0.
+        \]
+        \item Calculer l'aire du triangle $ABC$. En déduire la distance du point $B$ à la droite $(AC)$.
+        \item Calculer la distance $AB$. En déduire que $A$ est le projeté orthogonal de $B$ sur la droite $(AC)$.
+        \item Montrer que $ABC$ est un triangle isocèle et rectangle en $A$.
+        \item Calculer de deux manières la distance $BC$.
+        \item Calculer de deux manières $\overrightarrow{BC} \cdot \overrightarrow{BA}$.
+    \end{enumerate}
+
+    \item Soit $I(3,3,0)$ et $(S)$ la sphère de centre $I$ et de rayon $R=2$. 
+     \begin{enumerate}
+         \item Donner une équation cartésienne non réduite de la sphère $(S)$.
+          \item Donner une représentation paramétrique de la droite $\Delta$ perpendiculaire au plan $P$ et passant par le point $I$.
+          \item Déterminer les coordonnées du point $H$ intersection de $P$ et $\Delta$.
+          \item Vérifier que $H$ est le milieu du segment $[BC]$.
+          \item En déduire que $H$ est le centre du cercle circonscrit au triangle $ABC$.
+          \item Calculer la distance du point $I$ au plan $P$.
+          \item Montrer que le plan $P$ coupe la sphère $(S)$ suivant le cercle $(\zeta)$ de rayon $\sqrt{2}$ et de centre $H(2,2,0)$.
+    \end{enumerate}
+
+
+    \item Soit $\alpha \in \mathbb{R}$ et $(S_\alpha)$ l'ensemble des points $M(x,y,z)$ de l'espace tels que
+    \[
+        x^2 + y^2 + z^2 - 2x\cos\alpha + 2y\cos\alpha - 2\sqrt{2}\, z \sin\alpha - 6 = 0.
+    \]
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+             \item Justifier que $(S_\alpha)$ est la sphère de centre $J(\cos\alpha, -\cos\alpha, \sqrt{2}\sin\alpha)$ et de rayon $2\sqrt{2}$.
+             \item Déterminer une équation cartésienne du plan $Q$ parallèle au plan $P$ et passant par le point $O$.
+             \item Donner une équation cartésienne de la sphère $S'$ de centre $O$ et de rayon $\sqrt{2}$.
+             \item Montrer que $Q$ coupe $S'$ suivant un cercle $\zeta '$ dont on déterminera le centre et le rayon.
+             \item Montrer que $J$ est un point de $\zeta '$.
+
+        \end{enumerate}
+        \item Montrer que $(S_\alpha)$ et $P$ sont tangents au point $K(2+\cos\alpha,\, 2-\cos\alpha,\, \sqrt{2}\sin\alpha)$.
+        \item Calculer la distance $IK$.
+        \item En déduire que le point $K$ appartient à un cercle que l'on précisera.
+
+    \end{enumerate}
+
+    \item Vérifier que $ABCJ$ est un tétraèdre et calculer son volume.
+    \item Vérifier que les tétraèdres $ABCJ$ et $ABCO$ ont même volume.
+    \item Montrer que $HOJK$ est un rectangle et calculer son aire.
+    \item Montrer que les segments $[OH]$ et $[JK]$ ont le même plan médiateur.
+    \item Démontrer que les points $I$, $H$ et $O$ sont alignés. En déduire que les cercles $\zeta$ et $\zeta'$ ont le même axe.
+
+
+\end{enumerate}
+
+\vspace{1.5cm}
+
+\newpage
+
+
+% ==================== EXERCICE 56 ====================
+\section*{Exercice 56}
+
+L'espace est rapporté à un repère orthonormé $(O,\vec{i},\vec{j},\vec{k})$. On considère les points
+$A(2,-3,-1)$, $B(1,0,2)$ et $C(0,1,3)$.
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Montrer que les points $A$, $B$ et $C$ ne sont pas alignés.
+        \item Écrire une équation cartésienne du plan $(P)$ passant par les points $A$, $B$ et $C$.
+    \end{enumerate}
+
+    \item Pour tout réel $t \in [-\pi, \pi[$, on considère l'ensemble $(S_t)$ des points $M(x,y,z)$ de l'espace vérifiant l'équation cartésienne :
+    \[
+        x^2 + y^2 + z^2 - 2t\,x - 2y\sin(t) + 2z + t^2 + \sin^2(t) - 1 = 0.
+    \]
+    Montrer que $(S_t)$ est une sphère dont on précisera le centre et le rayon.
+
+    \item
+    \begin{enumerate}
+        \item Étudier, suivant les valeurs de $t$, l'intersection de la sphère $(S_t)$ et du plan $(P)$.
+        \item Dans le cas où le plan $(P)$ est tangent à la sphère $(S_t)$, déterminer les coordonnées du point de contact.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{1.5cm}
+
+% ==================== EXERCICE 62 ====================
+\section*{Exercice 62}
+
+$ABCDEFGH$ est le cube d'arête $1$ représenté sur la figure ci-dessous à compléter. L'espace est rapporté au repère orthonormé $\left(A; \overrightarrow{AB}, \overrightarrow{AD}, \overrightarrow{AE}\right)$.
+
+\subsection*{Partie A – Un triangle et son centre de gravité}
+\begin{enumerate}
+    \item Démontrer que le triangle $BDE$ est équilatéral.
+    \item Soit $I$ le centre de gravité du triangle $BDE$.
+    \begin{enumerate}
+        \item Calculer les coordonnées de $I$.
+        \item Démontrer que $\overrightarrow{AI} = \frac{1}{3}\overrightarrow{AG}$. Que peut-on en déduire pour les points $A$, $I$ et $G$?
+    \end{enumerate}
+    \item Prouver que $I$ est le projeté orthogonal de $A$ sur le plan $(BDE)$.
+\end{enumerate}
+
+\subsection*{Partie B – Une droite particulière}
+Pour tout nombre réel $k$, on définit deux points $M_k$ et $N_k$, ainsi qu'un plan $P_k$ de la façon suivante :
+\begin{itemize}
+    \item $M_k$ est le point de la droite $(AG)$ tel que $\overrightarrow{AM_k} = k\,\overrightarrow{AG}$;
+    \item $P_k$ est le plan passant par $M_k$ et parallèle au plan $(BDE)$;
+    \item $N_k$ est le point d'intersection du plan $P_k$ et de la droite $(BC)$.
+\end{itemize}
+
+\begin{enumerate}
+    \item Identifier $P_\frac{1}{3}$, $M_\frac{1}{3}$ et $N_\frac{1}{3}$ en utilisant des points déjà définis. Calculer la distance $M_\frac{1}{3}N_\frac{1}{3}$.
+
+    \item Calcul des coordonnées de $N_k$.
+    \begin{enumerate}
+        \item Calculer les coordonnées de $M_k$ dans le repère $\left(A; \overrightarrow{AB}, \overrightarrow{AD}, \overrightarrow{AE}\right)$.
+        \item Déterminer une équation du plan $P_k$ dans ce repère.
+        \item En déduire que le point $N_k$ a pour coordonnées $(1\,;\,3k-1\,;\,0)$.
+    \end{enumerate}
+
+    \item Pour quelles valeurs de $k$ la droite $(M_kN_k)$ est-elle orthogonale à la fois aux droites $(AG)$ et $(BC)$?
+
+    \item Pour quelles valeurs de $k$ la distance $M_kN_k$ est-elle minimale?
+
+    \item Tracer sur la figure donnée ci-dessous, la section du cube par le plan $P_\frac{1}{2}$. Tracer la droite $(M_\frac{1}{2}N_\frac{1}{2})$ sur la même figure.
+\end{enumerate}
+
+\end{document}
